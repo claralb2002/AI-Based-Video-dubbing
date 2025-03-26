@@ -1,0 +1,23 @@
+# For setup run:
+# conda env create -f environment.yml
+# conda activate '02466_AI_dubbing'
+# python -m ipykernel install --user --name='02466_AI_dubbing' --display-name "Python ('02466_AI_dubbing')"
+
+# Add new packages under dependencies or pip.
+# To update env, run the following:
+# conda env update -f environment.yml --prune
+  
+name: 02466_AI_dubbing
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - ffmpeg
+  - ipykernel
+  - notebook
+  - pyaudio
+  - pip:
+      - openai-whisper
+      - vosk
+      - pydub
