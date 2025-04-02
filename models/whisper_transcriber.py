@@ -1,4 +1,3 @@
-from utils.audio_preprocessing import preprocess_audio
 import whisper
 import numpy as np
 import time
@@ -11,7 +10,7 @@ class WhisperTranscriber:
         print("Model loaded successfully!")
 
 
-    def transcribe_audio_in_chunks(self, audio_file, chunk_duration_ms=5000):
+    def transcribe_audio_in_chunks(self, audio, chunk_duration_ms=5000):
         """
         Transcribes an audio file in chunks.
 
@@ -22,9 +21,6 @@ class WhisperTranscriber:
         Returns:
             list: List of transcribed text for each chunk.
         """
-        
-        # Use the utils function to preprocess the audio
-        audio = preprocess_audio(audio_file)
 
         transcriptions = []
         num_chunks = len(audio) // chunk_duration_ms + (1 if len(audio) % chunk_duration_ms != 0 else 0)
