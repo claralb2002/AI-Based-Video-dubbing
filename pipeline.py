@@ -51,7 +51,22 @@ class Pipeline:
     
     # Worker process for Translation using MarianMT (Helsinki-NLP)
     def translation_worker(text_queue, output_queue=None):
-        pass
+        from transformers import pipeline # uses Hugging Face transformers for translation
+        
+        translator = pipeline("translation_en_to_da", model="Helsinki-NLP/opus-mt-en-da", device=-1) # device = -1 means using CPU. 
+        
+        while True:
+            text = text_queue.get() # get text from the input queue. This will wait if queue is empty.
+            if text is None: # If None, it stops
+                break # exit loop
+            
+            
+            translated_text = translator(text)[0]['translation_text'].strip() # get translated text and remove any leading whitespace
+            
+            print(f"Translated: {translated_text}") # printing to the console
+            
+            if output_queue: # if an output queue was provided
+                output_queue.put(translated_text) # put translated text into that queue
     
     
     
