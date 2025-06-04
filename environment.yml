@@ -1,25 +1,30 @@
 # For setup run:
-# conda env create -f environment.yml
+# mamba env create -f environment.yml     or conda
 # conda activate '02466_AI_dubbing'
 # python -m ipykernel install --user --name='02466_AI_dubbing' --display-name "Python ('02466_AI_dubbing')"
 
 # Add new packages under dependencies or pip.
 # To update env, run the following:
-# conda env update -f environment.yml --prune
+# mamba env update -f environment.yml --prune     or conda
   
 name: 02466_AI_dubbing
 channels:
   - conda-forge
+  - defaults
 dependencies:
   - python
   - pip
   - ffmpeg
   - ipykernel
   - notebook
-  - pyaudio
+  - python-sounddevice
   - datasets
   - librosa
+  - transformers
+  - torchaudio
+  - jiwer
+  - sentencepiece
   - pip:
       - openai-whisper
-      - vosk
       - pydub
+      - silero-vad[onnx]
