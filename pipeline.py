@@ -17,11 +17,33 @@ class Pipeline:
         # self.tts_queue = Queue() 
 
     # Worker process for Speech-to-Text using OpenAI Whisper
-    def stt_worker(audio_queue):
+    def stt_worker(audio_queue, text_queue, wf_channels):
         import whisper # imports inside to avoid problems when using multi processing
     
         model = whisper.load_model("base", device="cpu") #loading Whisper model on CPU
         
+        
+        while True:
+            audio_chunk = audio_queue.get() # get audio chunk from queue, and waits if it gets nothing
+            if audio_chunk is None: # If None, it stops
+                text_queue.put(None) # pass None to translator
+                break
+            
+            audio_samples = np.frombuffer(audio_chunk, dtype=np.int16).astype(np.float32) #Convert audio bytes to a NumPy array of floats
+            
+            if audio_samples.ndim == 1 and wf_channels == 2: # check if its a 1D but actually from 2 channels
+                audio_samples = audio_samples.reshape(-1, 2).mean(axis=1) # reshape and average across channels
+            
+            
+            audio_samples = audio_samples / 32768.0 #normalize between -1 and 1. Divide by the max value for int16
+            
+            result = model.transcribe(audio_samples, language="en") # Do the actual transcription "en" = english
+        
+            transcription = result['text'].strip() #get text and clean up for extra spaces
+            text_queue.put(transcription) # put transcribed text into the queue for translation
+
+
+
         
  
         
