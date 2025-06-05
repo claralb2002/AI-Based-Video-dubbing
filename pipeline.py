@@ -34,19 +34,14 @@ class Pipeline:
     
     @staticmethod
     def translation_worker(transcription_queue, translation_queue):
-        from transformers import MarianTokenizer, MarianMTModel
-        tokenizer = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-da")
-        model = MarianMTModel.from_pretrained("Helsinki-NLP/opus-mt-en-da")
+        from models.translator import ChunkTranslator
+        model = ChunkTranslator(model_name="Helsinki-NLP/opus-mt-en-da")
 
         while True:
-            text = transcription_queue.get()
-            if text is None:
+            transcription = transcription_queue.get()
+            if transcription is None:
                 break
-            text = text.rstrip()
-            input_tokens = tokenizer(text, return_tensors="pt", padding=False, truncation=False)
-            output_tokens = model.generate(**input_tokens, num_beams=2, early_stopping=True)
-            translated = tokenizer.batch_decode(output_tokens, skip_special_tokens=True)[0]
-            translated = translated.strip()
+            translated = model.translate_chunk(transcription)
             translation_queue.put(translated)
     
     @staticmethod
