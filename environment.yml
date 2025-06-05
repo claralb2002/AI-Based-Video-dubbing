@@ -15,6 +15,7 @@ dependencies:
   - python
   - pip
   - ffmpeg
+  - pytorch
   - ipykernel
   - notebook
   - python-sounddevice
