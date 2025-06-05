@@ -28,6 +28,8 @@ class MMS_speaker:
         audio = audio_waveform.cpu().numpy().squeeze()
         return audio
 
+        #sd.play(audio, self.sample_rate)
+        #sd.wait()
 
 """
 Danish SpeechT5 TTS model
@@ -40,7 +42,7 @@ https://github.com/JackismyShephard/hugging-face-audio-course/blob/main/notebook
 """
 
 class DanishSpeechT5:
-    def __init__(self, model_id="JackismyShephard/speecht5_tts-finetuned-nst-da", embedding_path="utils/male_51_vest_sydsjaelland.npy"):
+    def __init__(self, model_id="JackismyShephard/speecht5_tts-finetuned-nst-da", embedding_path="../utils/male_51_vest_sydsjaelland.npy"):
         
         print(f"Loading SpeechT5 Danish model: {model_id}")
         self.processor = SpeechT5Processor.from_pretrained(model_id)               
@@ -65,4 +67,6 @@ class DanishSpeechT5:
         audio = waveform.cpu().numpy().squeeze()
         return audio
 
+        #sd.play(audio, self.sample_rate)
+        #sd.wait()
 
