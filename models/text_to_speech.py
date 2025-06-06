@@ -4,6 +4,7 @@ import torch
 from transformers import SpeechT5Processor, SpeechT5ForTextToSpeech, SpeechT5HifiGan
 from pathlib import Path
 import numpy as np
+from utils.danish_replacement import replace_danish_letters
 
 """
 Meta's MMS (Multilingual Speech Synthesis)
@@ -57,8 +58,11 @@ class DanishSpeechT5:
 
 
     def speak(self, text):
-        inputs = self.processor(text=text, return_tensors="pt")
+        # Replace Danish letters with their English equivalents for the finetuned danish model
+        text = replace_danish_letters(text)
 
+        inputs = self.processor(text=text, return_tensors="pt")
+    
         with torch.no_grad():
             waveform = self.model.generate(inputs["input_ids"],
                                            speaker_embeddings=self.speaker_embedding,
