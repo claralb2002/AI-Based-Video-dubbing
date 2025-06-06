@@ -57,7 +57,7 @@ class DanishSpeechT5:
         self.speaker_embedding = torch.tensor(embedding_np, dtype=torch.float).unsqueeze(0)  
 
 
-    def speak(self, text):
+    def speak(self, text, speed=1.0):
         # Replace Danish letters with their English equivalents for the finetuned danish model
         text = replace_danish_letters(text)
 
@@ -68,9 +68,25 @@ class DanishSpeechT5:
                                            speaker_embeddings=self.speaker_embedding,
                                            vocoder=self.vocoder)
        
+        if speed != 1.0:
+            waveform = audio_speed_control(waveform, slowdown_factor=speed)
+
         audio = waveform.cpu().numpy().squeeze()
         return audio
 
         #sd.play(audio, self.sample_rate)
         #sd.wait()
 
+
+import torch.nn.functional as F
+def audio_speed_control(audio_tensor, slowdown_factor=1.3):
+    # length of the audio tensor
+    length = audio_tensor.shape[-1]
+
+    # calculate the new length based on the slowdown factor
+    new_length = int(length * slowdown_factor)
+
+    # interpoler for at strække waveformen
+    audio_tensor = audio_tensor.unsqueeze(0).unsqueeze(0)  # [1, 1, T]
+    slowed = F.interpolate(audio_tensor, size=new_length, mode="linear", align_corners=True)
+    return slowed.squeeze()
