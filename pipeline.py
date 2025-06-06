@@ -56,7 +56,7 @@ class Pipeline:
         from models.text_to_speech import DanishSpeechT5, MMS_speaker
         
         if output_language == "da":
-            model = DanishSpeechT5()
+            model = DanishSpeechT5(embedding_path="utils/male_51_vest_sydsjaelland.npy")
         if output_language == "en":
             model = MMS_speaker()    
         
