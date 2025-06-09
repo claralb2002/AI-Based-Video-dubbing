@@ -5,6 +5,8 @@ from transformers import SpeechT5Processor, SpeechT5ForTextToSpeech, SpeechT5Hif
 from pathlib import Path
 import numpy as np
 from utils.danish_replacement import replace_danish_letters
+from datasets import load_dataset
+
 
 """
 Meta's MMS (Multilingual Speech Synthesis)
@@ -20,17 +22,48 @@ class MMS_speaker:
         self.sample_rate = self.model.config.sampling_rate
         print("MMS speaker model loaded!")
 
-    def speak(self, text):
+    def speak(self, text, speed=1.0):
         inputs = self.tokenizer(text, return_tensors="pt")
-
+        self.model.speaking_rate = speed
         with torch.no_grad():
             audio_waveform = self.model(**inputs).waveform
 
         audio = audio_waveform.cpu().numpy().squeeze()
-        return audio
+        # return audio
 
-        #sd.play(audio, self.sample_rate)
-        #sd.wait()
+        sd.play(audio, self.sample_rate)
+        sd.wait()
+
+"""
+SpeechT5 from Microsoft
+https://huggingface.co/microsoft/speecht5_tts
+"""
+
+class SpeechT5:
+    def __init__(self, model_id="microsoft/speecht5_tts"):
+        print(f"Loading SpeechT5 model: {model_id}")
+        self.processor = SpeechT5Processor.from_pretrained(model_id)
+        self.model = SpeechT5ForTextToSpeech.from_pretrained(model_id)
+        self.vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
+        self.sample_rate = self.vocoder.config.sampling_rate
+        print("SpeechT5 model loaded!")
+
+        embeddings_dataset = load_dataset("Matthijs/cmu-arctic-xvectors", split="validation")
+        self.speaker_embedding = torch.tensor(embeddings_dataset[7306]["xvector"]).unsqueeze(0)
+
+    def speak(self, text):
+        inputs = self.processor(text=text, return_tensors="pt")
+        with torch.no_grad():
+            waveform = self.model.generate(
+                inputs["input_ids"],
+                speaker_embeddings=self.speaker_embedding,
+                vocoder=self.vocoder
+            )
+
+        audio = waveform.cpu().numpy().squeeze()
+        sd.play(audio, self.sample_rate)
+        sd.wait()
+
 
 """
 Danish SpeechT5 TTS model
@@ -72,11 +105,11 @@ class DanishSpeechT5:
             waveform = audio_speed_control(waveform, slowdown_factor=speed)
 
         audio = waveform.cpu().numpy().squeeze()
-        return audio
+        # return audio
 
-        #sd.play(audio, self.sample_rate)
-        #sd.wait()
-
+        sd.play(audio, self.sample_rate)
+        sd.wait()
+   
 
 import torch.nn.functional as F
 def audio_speed_control(audio_tensor, slowdown_factor=1.3):
@@ -90,3 +123,4 @@ def audio_speed_control(audio_tensor, slowdown_factor=1.3):
     audio_tensor = audio_tensor.unsqueeze(0).unsqueeze(0)  # [1, 1, T]
     slowed = F.interpolate(audio_tensor, size=new_length, mode="linear", align_corners=True)
     return slowed.squeeze()
+
