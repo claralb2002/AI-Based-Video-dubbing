@@ -14,9 +14,11 @@ class Pipeline:
 
     @staticmethod
     def stt_worker(audio_queue, transcription_queue, input_language):
-        from models.whisper_transcriber import WhisperTranscriber
-
-        model = WhisperTranscriber(language = input_language)
+        from models.whisper_transcriber import WhisperTranscriber, DanishTranscriber
+        if input_language == "en":
+            model = WhisperTranscriber(model_type="base.en", device="cpu")
+        if input_language == "da":
+            model = DanishTranscriber()
 
         while True:
             chunk = audio_queue.get()
@@ -86,11 +88,11 @@ class Pipeline:
 if __name__ == "__main__":
     from threading import Thread
 
-    input_language = "en"
-    output_language = "da"
+    input_language = "da"
+    output_language = "en"
 
 
-    wav_path = "data/speaker_3.wav"
+    wav_path = "data/danish/dk_speaker_3.wav"
     audio = preprocess_audio(wav_path)
 
     pipeline = Pipeline(input_language=input_language, output_language=output_language)
