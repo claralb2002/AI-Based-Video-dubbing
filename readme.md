@@ -1,21 +1,26 @@
 
 # Live AI Translation: Real-Time Multilingual Communication
 
-A brief description of what this project does and who it's for
+This project explores the development of a real-time audio translation system by integrating speech-to-text, text-translation, and text-to-speech components into a low-latency, high-accuracy processing pipeline.
 
 
 
+## Installation of environemnt
 
-## Installation
-
-Install my-project with npm
-
+For setup run
 ```bash
-  npm install my-project
-  cd my-project
+  conda env create -f environment.yml # or mamba
+  conda activate '02466_AI_dubbing'
+  python -m ipykernel install --user --name='02466_AI_dubbing' --display-name "Python ('02466_AI_dubbing')"
 ```
-    
-## Usage/Examples
+To update env, run the following
+```bash
+    conda env update -f environment.yml --prune
+
+```
+
+
+## Usage
 
 ```javascript
 import Component from 'my-project'
