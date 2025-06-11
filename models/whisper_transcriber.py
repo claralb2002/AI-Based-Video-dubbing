@@ -119,5 +119,5 @@ class DanishTranscriber(LiveTranscriber):
             return None
         
         text = self.model(chunk).get("text", "")
-        print(text)
+        # print(text)
         return text

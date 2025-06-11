@@ -88,11 +88,16 @@ class Pipeline:
 if __name__ == "__main__":
     from threading import Thread
 
-    input_language = "da"
-    output_language = "en"
+    input_language = "en"
+    output_language = "da"
 
 
-    wav_path = "data/danish/dk_speaker_3.wav"
+    if input_language == "da":
+        wav_path = "data/danish/dk_speaker_3.wav"
+    if input_language == "en":
+        wav_path = "data/english/speaker_3_final.wav"
+
+
     audio = preprocess_audio(wav_path)
 
     pipeline = Pipeline(input_language=input_language, output_language=output_language)
@@ -114,7 +119,7 @@ if __name__ == "__main__":
 
     for chunk in stream_audio(audio, frame_ms=200):
         pipeline.audio_queue.put(chunk)
-
+        
     pipeline.stop()
     printer_thread.join()
 

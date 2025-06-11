@@ -29,10 +29,10 @@ class MMS_speaker:
             audio_waveform = self.model(**inputs).waveform
 
         audio = audio_waveform.cpu().numpy().squeeze()
-        # return audio
+        return audio
 
-        sd.play(audio, self.sample_rate)
-        sd.wait()
+        # sd.play(audio, self.sample_rate)
+        # sd.wait()
 
 """
 SpeechT5 from Microsoft
@@ -61,9 +61,9 @@ class SpeechT5:
             )
 
         audio = waveform.cpu().numpy().squeeze()
-        sd.play(audio, self.sample_rate)
-        sd.wait()
-
+        # sd.play(audio, self.sample_rate)
+        # sd.wait()
+        return audio
 
 """
 Danish SpeechT5 TTS model
