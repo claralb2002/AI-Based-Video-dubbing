@@ -12,20 +12,23 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python
+  - python=3.12.10
   - pip
   - ffmpeg
   - pytorch
+  - torchaudio
   - ipykernel
   - notebook
   - python-sounddevice
   - datasets
   - librosa
   - transformers
-  - torchaudio
   - jiwer
   - sentencepiece
   - pip:
-      - openai-whisper
+      - faster-whisper
       - pydub
       - silero-vad[onnx]
+      - num2words
+      - evaluate
+      - unbabel-comet
