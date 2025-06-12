@@ -47,10 +47,10 @@ class LiveTranscriber:
             enough_silence = self.silence_counter >= self.silence_length
 
             if (enough_silence and long_enough) or len(self.speech_buffer) >= self.max_samples: # Enough silence or max chunk size reached
-                print(int(len(self.speech_buffer))/int(self.sample_rate))
+                
 
                 keep_for_next = self.speech_buffer[-self.overlap:]
-                chunk = np.array(self.speech_buffer[:-self.overlap])
+                chunk = np.array(self.speech_buffer)
 
                 self.speech_buffer = list(keep_for_next)
                 self.silence_counter = 0
@@ -103,21 +103,43 @@ class WhisperTranscriber(LiveTranscriber):
 class DanishTranscriber(LiveTranscriber):
     def __init__(self, device = "cpu",
                  sample_rate = 16000, min_chunk_duration_ms = 4000, max_chunk_duration_ms = 5000, 
-                 vad_threshold = 0.65, vad_min_silence_ms = 150, vad_pad_ms = 150, silence_length = 12, overlap_length = 0.1):
+                 vad_threshold = 0.65, silence_length = 12, overlap_length = 0.5):
         
         super().__init__(sample_rate, min_chunk_duration_ms, max_chunk_duration_ms,
-             vad_threshold, vad_min_silence_ms, vad_pad_ms, silence_length, overlap_length, device)
+             vad_threshold, silence_length, overlap_length, device)
 
         # Loading STT model
         print(f"Loading Danish transcriber model…")
         model = "CoRal-project/roest-wav2vec2-315m-v2"
         self.model = pipeline("automatic-speech-recognition", model=model)
         print("Danish transcriber model loaded")
+        self.prev_chunk = []
     
     def transcribe_buffer(self, chunk):
         if len(chunk) == 0:
             return None
         
-        text = self.model(chunk).get("text", "")
-        # print(text)
+        text_timestamp = self.model(chunk, return_timestamps="word")
+        text_timestamp['text'] = text_timestamp['text'].split(' ') # Making text into list
+
+        if text_timestamp['chunks'][0]['timestamp'][0] <= 0.3: # Checking if word close to start boundary
+            text_timestamp['text'].pop(0)
+            text_timestamp['chunks'].pop(0)
+        if len(text_timestamp['chunks'])>0:
+            if text_timestamp['chunks'][-1]['timestamp'][1] >= (len(chunk)/self.sample_rate)-0.3: # Checking if word close to end of boundary
+                text_timestamp['text'].pop(-1)
+                text_timestamp['chunks'].pop(-1)
+        
+        for i,word in enumerate(text_timestamp['text']):
+            if len(word)==1 and word!='i' and word!='ø' and word!='ø':
+                text_timestamp['text'].pop(i)
+
+        for i in range(len(text_timestamp['text']),0,-1): # Going backward to find max amount of duplicated words if any exist
+            if len(self.prev_chunk)>=i:
+                if text_timestamp['text'][0:i] == self.prev_chunk[-i:]:
+                    text_timestamp['text'] = text_timestamp['text'][i:]
+                    break
+
+        self.prev_chunk = text_timestamp['text']
+        text = " ".join(text_timestamp['text'])
         return text
