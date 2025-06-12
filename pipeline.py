@@ -4,13 +4,14 @@ from utils.audio_streaming import stream_audio
 import sounddevice as sd
     
 class Pipeline:
-    def __init__(self, input_language, output_language):
+    def __init__(self, input_language, output_language, device="cpu"):
         self.input_language = input_language
         self.output_language = output_language
         self.audio_queue = Queue()
         self.transcription_queue = Queue()
         self.translation_queue = Queue()
         self.output_queue = Queue()
+        self.device = device
 
     @staticmethod
     def stt_worker(audio_queue, transcription_queue, input_language):
@@ -54,13 +55,13 @@ class Pipeline:
             translation_queue.put(translated)
     
     @staticmethod
-    def tts_worker(translation_queue, output_queue, output_language):
-        from models.text_to_speech import DanishSpeechT5, MMS_speaker
+    def tts_worker(translation_queue, output_queue, output_language, device="cpu"):
+        from models.text_to_speech import DanishSpeechT5, MMS_speaker, SpeechT5
         
         if output_language == "da":
-            model = DanishSpeechT5(embedding_path="utils/male_51_vest_sydsjaelland.npy")
+            model = DanishSpeechT5(embedding_path="utils/male_51_vest_sydsjaelland.npy", device=device)
         if output_language == "en":
-            model = MMS_speaker()    
+            model = SpeechT5(device=device)    
         
         while True:
             translation = translation_queue.get()
@@ -73,7 +74,7 @@ class Pipeline:
     def start(self):
         self.stt_proc = Process(target=self.stt_worker, args=(self.audio_queue, self.transcription_queue, self.input_language))
         self.trans_proc = Process(target=self.translation_worker, args=(self.transcription_queue, self.translation_queue, self.input_language))
-        self.tts_proc = Process(target=self.tts_worker, args=(self.translation_queue, self.output_queue, self.output_language))
+        self.tts_proc = Process(target=self.tts_worker, args=(self.translation_queue, self.output_queue, self.output_language, self.device))
         self.stt_proc.start()
         self.trans_proc.start()
         self.tts_proc.start()
@@ -100,7 +101,7 @@ if __name__ == "__main__":
 
     audio = preprocess_audio(wav_path)
 
-    pipeline = Pipeline(input_language=input_language, output_language=output_language)
+    pipeline = Pipeline(input_language=input_language, output_language=output_language, device="mps")
     pipeline.start()
 
     def print_outputs(queue):

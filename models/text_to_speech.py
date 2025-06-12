@@ -40,22 +40,25 @@ https://huggingface.co/microsoft/speecht5_tts
 """
 
 class SpeechT5:
-    def __init__(self, model_id="microsoft/speecht5_tts"):
+    def __init__(self, model_id="microsoft/speecht5_tts", device="cpu"):
+        self.device = device
         print(f"Loading SpeechT5 model: {model_id}")
         self.processor = SpeechT5Processor.from_pretrained(model_id)
-        self.model = SpeechT5ForTextToSpeech.from_pretrained(model_id)
-        self.vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
+        self.model = SpeechT5ForTextToSpeech.from_pretrained(model_id).to(device)
+        self.vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan").to(device)
         self.sample_rate = self.vocoder.config.sampling_rate
         print("SpeechT5 model loaded!")
 
         embeddings_dataset = load_dataset("Matthijs/cmu-arctic-xvectors", split="validation")
-        self.speaker_embedding = torch.tensor(embeddings_dataset[7306]["xvector"]).unsqueeze(0)
+        self.speaker_embedding = torch.tensor(embeddings_dataset[7306]["xvector"]).unsqueeze(0).to(device)
 
     def speak(self, text):
         inputs = self.processor(text=text, return_tensors="pt")
+        input_ids = inputs["input_ids"].to(self.device)
+
         with torch.no_grad():
             waveform = self.model.generate(
-                inputs["input_ids"],
+                input_ids,
                 speaker_embeddings=self.speaker_embedding,
                 vocoder=self.vocoder
             )
@@ -76,18 +79,18 @@ https://github.com/JackismyShephard/hugging-face-audio-course/blob/main/notebook
 """
 
 class DanishSpeechT5:
-    def __init__(self, model_id="JackismyShephard/speecht5_tts-finetuned-nst-da", embedding_path="../utils/male_51_vest_sydsjaelland.npy"):
-        
+    def __init__(self, model_id="JackismyShephard/speecht5_tts-finetuned-nst-da", embedding_path="../utils/male_51_vest_sydsjaelland.npy", device="cpu"):
+        self.device = device
         print(f"Loading SpeechT5 Danish model: {model_id}")
         self.processor = SpeechT5Processor.from_pretrained(model_id)               
-        self.model     = SpeechT5ForTextToSpeech.from_pretrained(model_id)         
-        self.vocoder   = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
+        self.model     = SpeechT5ForTextToSpeech.from_pretrained(model_id).to(device)     
+        self.vocoder   = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan").to(device)
         self.sample_rate = self.vocoder.config.sampling_rate                   
         print("Danish SpeechT5 model loaded!")
 
         # load the fixed speaker embedding (from: JackismyShephard/embeddings/nst-da-metricgan-plus/male_51_vest_sydsjaelland.npy Github)
         embedding_np = np.load(Path(embedding_path))
-        self.speaker_embedding = torch.tensor(embedding_np, dtype=torch.float).unsqueeze(0)  
+        self.speaker_embedding = torch.tensor(embedding_np, dtype=torch.float).unsqueeze(0).to(device) 
 
 
     def speak(self, text, speed=1.0):
@@ -95,9 +98,11 @@ class DanishSpeechT5:
         text = replace_danish_letters(text)
 
         inputs = self.processor(text=text, return_tensors="pt")
+        input_ids = inputs["input_ids"].to(self.device)
+
     
         with torch.no_grad():
-            waveform = self.model.generate(inputs["input_ids"],
+            waveform = self.model.generate(input_ids,
                                            speaker_embeddings=self.speaker_embedding,
                                            vocoder=self.vocoder)
        
@@ -105,10 +110,10 @@ class DanishSpeechT5:
             waveform = audio_speed_control(waveform, slowdown_factor=speed)
 
         audio = waveform.cpu().numpy().squeeze()
-        # return audio
+        return audio
 
-        sd.play(audio, self.sample_rate)
-        sd.wait()
+        # sd.play(audio, self.sample_rate)
+        # sd.wait()
    
 
 import torch.nn.functional as F
