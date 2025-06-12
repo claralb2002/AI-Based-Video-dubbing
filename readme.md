@@ -1,7 +1,13 @@
 
 # Live AI Translation: Real-Time Multilingual Communication
 
+
+![App Screenshot](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
+[link](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
+
+
 This project explores the development of a real-time audio translation system by integrating speech-to-text, text-translation, and text-to-speech components into a low-latency, high-accuracy processing pipeline.
+
 
 
 
@@ -13,6 +19,7 @@ For setup run
   conda activate '02466_AI_dubbing'
   python -m ipykernel install --user --name='02466_AI_dubbing' --display-name "Python ('02466_AI_dubbing')"
 ```
+
 To update env, run the following
 ```bash
     conda env update -f environment.yml --prune
