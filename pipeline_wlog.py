@@ -16,22 +16,23 @@ It uses multiprocessing to handle audio processing in parallel, allowing for rea
 
 """
 class Pipeline:
-    def __init__(self, input_language, output_language, device="cpu"):
+    def __init__(self, input_language, output_language, min_chunk_size, device="cpu"):
         self.input_language = input_language
         self.output_language = output_language
         self.audio_queue = Queue()
         self.transcription_queue = Queue()
         self.translation_queue = Queue()
         self.output_queue = Queue()
+        self.min_chunk_size = min_chunk_size
         self.device = device
 
     @staticmethod
-    def stt_worker(audio_queue, transcription_queue, input_language):
+    def stt_worker(audio_queue, transcription_queue, input_language, min_chunk_size):
         from models.whisper_transcriber import WhisperTranscriber, DanishTranscriber
         if input_language == "en":
-            model = WhisperTranscriber(model_type="base.en", device="cpu")
+            model = WhisperTranscriber(min_chunk_duration_ms=min_chunk_size)
         if input_language == "da":
-            model = DanishTranscriber()
+            model = DanishTranscriber(min_chunk_duration_ms=min_chunk_size)
 
         while True:
             chunk = audio_queue.get()
@@ -56,9 +57,8 @@ class Pipeline:
         
     
     @staticmethod
-    def translation_worker(transcription_queue, translation_queue, input_language, output_language):
+    def translation_worker(transcription_queue, translation_queue, input_language):
         from models.translator import ChunkTranslator
-        from utils.num_to_words import numbers_to_words
         if input_language == "en":
             model = ChunkTranslator(model_name="Helsinki-NLP/opus-mt-en-da")
         if input_language == "da":
@@ -73,15 +73,14 @@ class Pipeline:
             chunk_id, start_time, stt_start, stt_end, transcription = chunk
 
             tt_start = time.perf_counter()
-            transcription = numbers_to_words(transcription, lang=input_language)
             translated = model.translate_chunk(transcription)
-            translated = numbers_to_words(translated, lang=output_language)
             tt_end = time.perf_counter()
-            translation_queue.put((chunk_id, start_time, stt_start, stt_end, tt_start, tt_end, translated))
+            translation_queue.put((chunk_id, start_time, stt_start, stt_end, tt_start, tt_end, transcription, translated))
     
     @staticmethod
     def tts_worker(translation_queue, output_queue, output_language, device="cpu"):
         from models.text_to_speech import DanishSpeechT5, MMS_speaker, SpeechT5
+        from utils.num_to_words import numbers_to_words
         
         if output_language == "da":
             model = DanishSpeechT5(embedding_path="utils/male_51_vest_sydsjaelland.npy", device=device)
@@ -93,10 +92,12 @@ class Pipeline:
             if chunk is None:
                 break
 
-            chunk_id, start_time, stt_start, stt_end, tt_start, tt_end, translation = chunk
+            chunk_id, start_time, stt_start, stt_end, tt_start, tt_end, transcription, translation = chunk
+            translated_num_to_words = numbers_to_words(translation, lang=output_language, split_abbreviations=True)
+            print("NUM2WORDS: ",translated_num_to_words)
 
             tts_start = time.perf_counter()
-            audio = model.speak(translation)
+            audio = model.speak(translated_num_to_words)
             tts_end = time.perf_counter()
 
             # compute latencies (end times - start times)
@@ -108,12 +109,12 @@ class Pipeline:
             # Log the latencies for the chunk
             logger.info(f"{chunk_id},{stt_latency:.2f},{trans_latency:.2f},{tts_latency:.2f},{total_latency:.2f}")
 
-            output_queue.put((translation, audio))
+            output_queue.put((transcription, translation, audio))
 
 
     def start(self):
-        self.stt_proc = Process(target=self.stt_worker, args=(self.audio_queue, self.transcription_queue, self.input_language))
-        self.trans_proc = Process(target=self.translation_worker, args=(self.transcription_queue, self.translation_queue, self.input_language, self.output_language))
+        self.stt_proc = Process(target=self.stt_worker, args=(self.audio_queue, self.transcription_queue, self.input_language, self.min_chunk_size))
+        self.trans_proc = Process(target=self.translation_worker, args=(self.transcription_queue, self.translation_queue, self.input_language))
         self.tts_proc = Process(target=self.tts_worker, args=(self.translation_queue, self.output_queue, self.output_language, self.device))
         self.stt_proc.start()
         self.trans_proc.start()
@@ -141,7 +142,7 @@ if __name__ == "__main__":
 
     audio = preprocess_audio(wav_path)
 
-    pipeline = Pipeline(input_language=input_language, output_language=output_language, device="mps")
+    pipeline = Pipeline(input_language=input_language, output_language=output_language, min_chunk_size=4000, device="cpu")
     pipeline.start()
 
     def print_outputs(queue):
@@ -149,8 +150,8 @@ if __name__ == "__main__":
             result = queue.get()
             if result is None:
                 break
-            translated, audio = result
-            # print(f"TRANSCRIPT: {transcript}")
+            transcript, translated, audio = result
+            print(f"TRANSCRIPT: {transcript}")
             print(f"TRANSLATED: {translated}")
             sd.play(audio, 16000)
             sd.wait()

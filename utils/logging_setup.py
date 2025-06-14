@@ -14,7 +14,7 @@ from datetime import datetime
 # for pipeline evaluation set file_name = input file + buffer size
 def setup_latency_logger(log_dir = "logs", file_name = f"latency_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}"):
 
-    log_path = os.path.join(log_dir, file_name, ".csv")
+    log_path = log_dir + "/" + file_name + ".csv"
 
     logger = logging.getLogger("latency_logger")
     logger.setLevel(logging.DEBUG)
