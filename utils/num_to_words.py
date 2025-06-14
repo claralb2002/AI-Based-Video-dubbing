@@ -77,7 +77,7 @@ def numbers_to_words(text, lang='en', split_abbreviations=True):
         except:
             return num_str  
 
-    pattern = r'\b\d+%|\d+s\b|\b\d+\s?erne\b|\b\d+(\.\d+)?\b'
+    pattern = r'\b\d+\s?%|\d+s\b|\b\d+\s?erne\b|\b\d+(\.\d+)?\b'
     processed_text = re.sub(pattern, replacer, text)
     
     if split_abbreviations:
@@ -85,7 +85,6 @@ def numbers_to_words(text, lang='en', split_abbreviations=True):
 
     return processed_text
 
-if __name__ == "__main__":
-    # print(numbers_to_words('9% 1910 2000', lang='en'))     
-    print(numbers_to_words('co2', split_abbreviations=True)) 
+if __name__ == "__main__":   
+    print(numbers_to_words('1910erne co 2', lang='da', split_abbreviations=True))  # "nitten hundrede tallet"
 
