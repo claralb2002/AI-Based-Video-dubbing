@@ -32,3 +32,4 @@ dependencies:
       - num2words
       - evaluate
       - unbabel-comet
+      - pyctcdecode
