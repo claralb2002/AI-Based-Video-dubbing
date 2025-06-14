@@ -3,18 +3,23 @@ from num2words import num2words
 
 def expand_abbreviations(text, lang='en'):
     def abbr_replacer(match):
+        # Split capital matches. 'PR' -> 'P R'
         token = match.group()
+        if token.isalpha() and token.isupper():
+            return ' '.join(char for char in token)
+
+        # Split if containing numbers in abbrev. 'co2' -> 'C O two'
         expanded = []
         for char in token:
             if char.isdigit():
                 expanded.append(num2words(int(char), lang=lang))
             else:
-                expanded.append(char.lower())  # or .upper() if you prefer
+                expanded.append(char.upper()) 
         return ' '.join(expanded)
 
-    return re.sub(r'\b[a-zA-Z]*\d+[a-zA-Z]*\b', abbr_replacer, text)
+    return re.sub(r'\b(?:[A-Z]{2,}|[a-zA-Z]*\d+[a-zA-Z]*)\b', abbr_replacer, text)
 
-def numbers_to_words(text, lang='en'):
+def numbers_to_words(text, lang='en', split_abbreviations=True):
     def replacer(match):
         num_str = match.group()
         try:
@@ -63,16 +68,24 @@ def numbers_to_words(text, lang='en'):
                     tens_word = f" {num2words(tens, lang=lang)}" if tens else ""
                     connector = "hundrede" if lang == "da" else "hundred"
                     return f"{hundreds_word} {connector}{tens_word}"
+                
+            elif num_str == "1" and lang == "da":
+                return "en"
+            
             else:
                 return num2words(float(num_str), lang=lang)
         except:
             return num_str  
 
-    return expand_abbreviations(re.sub(r'\b\d+%|\d+s\b|\b\d+\s?erne\b|\b\d+(\.\d+)?\b', replacer, text), lang=lang)
+    pattern = r'\b\d+%|\d+s\b|\b\d+\s?erne\b|\b\d+(\.\d+)?\b'
+    processed_text = re.sub(pattern, replacer, text)
+    
+    if split_abbreviations:
+        processed_text = expand_abbreviations(processed_text, lang=lang)
+
+    return processed_text
 
 if __name__ == "__main__":
-    print(expand_abbreviations('CO2 H2O co2 h2o', lang='en'))  
-    print(expand_abbreviations('CO2 H2O co2 h2o', lang='en'))  
-    print(numbers_to_words('9% 1910 2000', lang='en'))     
-    print(numbers_to_words('5% 1910 2000', lang='da'))      
+    # print(numbers_to_words('9% 1910 2000', lang='en'))     
+    print(numbers_to_words('co2', split_abbreviations=True)) 
 
