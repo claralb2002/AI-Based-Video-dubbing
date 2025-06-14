@@ -2,34 +2,11 @@ from multiprocessing import Process, Queue
 from utils.audio_preprocessing import preprocess_audio
 from utils.audio_streaming import stream_audio
 import sounddevice as sd
-import logging
 import time
-from datetime import datetime
+from utils.logging_setup import setup_latency_logger
 
-""" 
-Time latency logger for the pipeline:
-
-This module logs the time taken for each stage of the pipeline: STT, translation, and TTS. As well as total time for a chunk, from input to output.
-
-For each procces in the pipeline the input and output times of a chunk are logged, 
-and the latencies are calculated for each chunk when they are fully processed througout the pipeline.
-"""
-# configure logging
-logger = logging.getLogger("latency_logger")
-logger.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s - %(message)s')
-
-# handler for log files
-fh = logging.FileHandler(f"logs/latency_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
-fh.setFormatter(formatter)
-logger.addHandler(fh)
-
-# handler for console output
-sh = logging.StreamHandler()
-sh.setFormatter(formatter)
-logger.addHandler(sh)
-    
-
+# Setup the logger for latency logging
+logger = setup_latency_logger()
 
 """
 Pipeline class that orchestrates the STT, translation, and TTS processes:
@@ -73,7 +50,7 @@ class Pipeline:
 
         final_result = model.flush()
         if final_result:
-            transcription_queue.put(final_result)
+            transcription_queue.put((chunk_id, start_time, stt_start, stt_end, final_result))
 
         transcription_queue.put(None)
         
@@ -129,10 +106,7 @@ class Pipeline:
             total_latency = (tts_end - start_time) * 1000
 
             # Log the latencies for the chunk
-            logger.info(
-                f"Chunk {chunk_id}: STT={stt_latency:.2f}ms, TT={trans_latency:.2f}ms, "
-                f"TTS={tts_latency:.2f}ms, TOTAL={total_latency:.2f}ms"
-            )
+            logger.info(f"{chunk_id},{stt_latency:.2f},{trans_latency:.2f},{tts_latency:.2f},{total_latency:.2f}")
 
             output_queue.put((translation, audio))
 
