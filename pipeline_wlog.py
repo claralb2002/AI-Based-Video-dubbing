@@ -6,7 +6,7 @@ import time
 from utils.logging_setup import setup_latency_logger
 
 # Setup the logger for latency logging
-logger = setup_latency_logger()
+# logger = setup_latency_logger(file_name="latency_log_test")
 
 """
 Pipeline class that orchestrates the STT, translation, and TTS processes:
@@ -16,7 +16,7 @@ It uses multiprocessing to handle audio processing in parallel, allowing for rea
 
 """
 class Pipeline:
-    def __init__(self, input_language, output_language, min_chunk_size, device="cpu"):
+    def __init__(self, input_language, output_language, min_chunk_size, file_name, device="cpu"):
         self.input_language = input_language
         self.output_language = output_language
         self.audio_queue = Queue()
@@ -25,6 +25,7 @@ class Pipeline:
         self.output_queue = Queue()
         self.min_chunk_size = min_chunk_size
         self.device = device
+        self.file_name = file_name
 
     @staticmethod
     def stt_worker(audio_queue, transcription_queue, input_language, min_chunk_size):
@@ -37,6 +38,7 @@ class Pipeline:
         while True:
             chunk = audio_queue.get()
             if chunk is None:
+                transcription_queue.put(None)
                 break
 
             # Log the time when the audio chunk is received
@@ -68,6 +70,7 @@ class Pipeline:
         while True:
             chunk = transcription_queue.get()
             if chunk is None:
+                translation_queue.put(None)
                 break
 
             chunk_id, start_time, stt_start, stt_end, transcription = chunk
@@ -78,10 +81,13 @@ class Pipeline:
             translation_queue.put((chunk_id, start_time, stt_start, stt_end, tt_start, tt_end, transcription, translated))
     
     @staticmethod
-    def tts_worker(translation_queue, output_queue, output_language, device="cpu"):
+    def tts_worker(translation_queue, output_queue, output_language, file_name, device="cpu"):
         from models.text_to_speech import DanishSpeechT5, MMS_speaker, SpeechT5
         from utils.num_to_words import numbers_to_words
-        
+        from utils.logging_setup import setup_latency_logger
+
+        logger = setup_latency_logger(file_name)
+    
         if output_language == "da":
             model = DanishSpeechT5(embedding_path="utils/male_51_vest_sydsjaelland.npy", device=device)
         if output_language == "en":
@@ -90,11 +96,11 @@ class Pipeline:
         while True:
             chunk = translation_queue.get()
             if chunk is None:
+                output_queue.put(None)
                 break
 
             chunk_id, start_time, stt_start, stt_end, tt_start, tt_end, transcription, translation = chunk
             translated_num_to_words = numbers_to_words(translation, lang=output_language, split_abbreviations=True)
-            print("NUM2WORDS: ",translated_num_to_words)
 
             tts_start = time.perf_counter()
             audio = model.speak(translated_num_to_words)
@@ -107,7 +113,9 @@ class Pipeline:
             total_latency = (tts_end - start_time) * 1000
 
             # Log the latencies for the chunk
-            logger.info(f"{chunk_id},{stt_latency:.2f},{trans_latency:.2f},{tts_latency:.2f},{total_latency:.2f}")
+            transcription = transcription.replace(",", "")
+            translation = translation.replace(",", "")
+            logger.info(f"{chunk_id},{stt_latency:.2f},{trans_latency:.2f},{tts_latency:.2f},{total_latency:.2f}, {transcription}, {translation}")
 
             output_queue.put((transcription, translation, audio))
 
@@ -115,7 +123,7 @@ class Pipeline:
     def start(self):
         self.stt_proc = Process(target=self.stt_worker, args=(self.audio_queue, self.transcription_queue, self.input_language, self.min_chunk_size))
         self.trans_proc = Process(target=self.translation_worker, args=(self.transcription_queue, self.translation_queue, self.input_language))
-        self.tts_proc = Process(target=self.tts_worker, args=(self.translation_queue, self.output_queue, self.output_language, self.device))
+        self.tts_proc = Process(target=self.tts_worker, args=(self.translation_queue, self.output_queue, self.output_language, self.file_name, self.device))
         self.stt_proc.start()
         self.trans_proc.start()
         self.tts_proc.start()

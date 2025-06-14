@@ -29,6 +29,9 @@ class ChunkTranslator:
             parts = output_text.split(self.delimeter)
             translated_chunk = parts[-1].strip()
         else:
+            input_tokens = self.tokenizer(chunk, return_tensors="pt", padding=False, truncation=False)
+            output_tokens = self.model.generate(**input_tokens, num_beams=self.num_beams, early_stopping=True)
+            output_text = self.tokenizer.batch_decode(output_tokens, skip_special_tokens=True)[0].strip()
             translated_chunk = output_text
             if self.delimeter in input_text:
                 print(f"Warning: No delimiter found in OUTPUT: {output_text} INPUT: {input_text}")

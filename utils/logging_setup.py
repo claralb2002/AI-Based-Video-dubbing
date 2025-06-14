@@ -12,9 +12,9 @@ from datetime import datetime
 """
 
 # for pipeline evaluation set file_name = input file + buffer size
-def setup_latency_logger(log_dir = "logs", file_name = f"latency_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}"):
+def setup_latency_logger(file_name):
 
-    log_path = log_dir + "/" + file_name + ".csv"
+    log_path = "logs" + "/" + file_name + ".csv"
 
     logger = logging.getLogger("latency_logger")
     logger.setLevel(logging.DEBUG)
@@ -23,12 +23,12 @@ def setup_latency_logger(log_dir = "logs", file_name = f"latency_log_{datetime.n
         # write header if file doesn't exist
         if not os.path.exists(log_path):
             with open(log_path, "w") as f:
-                f.write("time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms\n")
+                f.write("time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation\n")
 
         formatter = logging.Formatter('%(asctime)s - %(message)s')
 
         # handler for log files
-        fh = logging.FileHandler(log_path)
+        fh = logging.FileHandler(log_path, encoding='utf-8')
         fh.setFormatter(formatter)
         logger.addHandler(fh)
 
