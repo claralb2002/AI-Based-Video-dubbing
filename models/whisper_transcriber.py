@@ -110,7 +110,7 @@ class WhisperTranscriber(LiveTranscriber):
 class DanishTranscriber(LiveTranscriber):
     def __init__(self, device = "cpu",
                  sample_rate = 16000, min_chunk_duration_ms = 4500, 
-                 vad_threshold = 0.65, silence_length_ms = 550, overlap_length = 0.5):
+                 vad_threshold = 0.65, silence_length_ms = 550, overlap_length = 1):
 
         super().__init__(sample_rate = sample_rate, min_chunk_duration_ms = min_chunk_duration_ms,
              vad_threshold = vad_threshold, silence_length_ms = silence_length_ms, overlap_length = overlap_length, device = device)
@@ -120,14 +120,30 @@ class DanishTranscriber(LiveTranscriber):
         model = "CoRal-project/roest-wav2vec2-315m-v2"
         self.model = pipeline("automatic-speech-recognition", model=model)
         print("Danish transcriber model loaded")
+        self.holding_chunk = None
+        self.wait = False
+        self.already_wait = False
         self.prev_chunk = []
     
     def transcribe_buffer(self, chunk):
         if len(chunk) == 0:
             return None
         
+        if self.wait:
+            chunk = np.concatenate((self.holding_chunk, chunk[self.overlap:]))
+            self.holding_chunk = None
+            self.wait = False
+            self.already_wait = True
+        else:
+            self.already_wait = False
+        
         text_timestamp = self.model(chunk, return_timestamps="word")
         text_timestamp['text'] = text_timestamp['text'].split(' ') # Making text into list
+
+        if len(text_timestamp['text']) == 1 and not self.already_wait:
+            self.holding_chunk = chunk
+            self.wait = True
+            return 'øøhhm'
 
         if text_timestamp['chunks'][0]['timestamp'][0] <= 0.3: # Checking if word close to start boundary
             text_timestamp['text'].pop(0)
@@ -149,6 +165,5 @@ class DanishTranscriber(LiveTranscriber):
 
         self.prev_chunk = text_timestamp['text']
         text = " ".join(text_timestamp['text'])
-        print(text)
         return text
 
