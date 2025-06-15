@@ -137,7 +137,7 @@ class DanishTranscriber(LiveTranscriber):
         else:
             self.already_wait = False
         
-        text_timestamp = self.model(chunk, return_timestamps="word", max_length = 600)
+        text_timestamp = self.model(chunk, return_timestamps="word")
         text_timestamp['text'] = text_timestamp['text'].split(' ') # Making text into list
 
         if len(text_timestamp['text']) == 1 and not self.already_wait:
