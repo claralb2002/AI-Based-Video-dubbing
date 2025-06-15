@@ -21,7 +21,7 @@ class ChunkTranslator:
         input_text = self.delimeter.join(cleaned_buffer)
 
         input_tokens = self.tokenizer(input_text, return_tensors="pt", padding=False, truncation=False)
-        max_length = input_tokens['input_ids'].shape[1]*2
+        max_length = min(input_tokens['input_ids'].shape[1]*2,600)
         output_tokens = self.model.generate(**input_tokens, num_beams=self.num_beams, early_stopping=True, repetition_penalty=1.5, max_length = max_length)
         output_text = self.tokenizer.batch_decode(output_tokens, skip_special_tokens=True)[0].strip()
         output_text = re.sub(r"<\s*_?\s*extra\s*_?\s*id\s*_?\s*0\s*_?\s*>", self.delimeter, output_text)
@@ -34,9 +34,9 @@ class ChunkTranslator:
             output_tokens = self.model.generate(**input_tokens, num_beams=self.num_beams, early_stopping=True, repetition_penalty=1.5, max_length = max_length)
             output_text = self.tokenizer.batch_decode(output_tokens, skip_special_tokens=True)[0].strip()
             translated_chunk = output_text
-            if self.delimeter in input_text:
-                print(f"Warning: No delimiter found in OUTPUT: {output_text} INPUT: {input_text}")
-                print(f'translated_chunk: {translated_chunk}')
+            # if self.delimeter in input_text:
+            #     print(f"Warning: No delimiter found in OUTPUT: {output_text} INPUT: {input_text}")
+
         return translated_chunk
 
     def reset_context(self):
@@ -53,5 +53,3 @@ if __name__ == "__main__":
 
     for chunk in text_chunks:
         translation = translator.translate_chunk(chunk)
-        print(f"Input: {chunk}")
-        print(f"Translated: {translation}\n")
