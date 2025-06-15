@@ -1,0 +1,72 @@
+time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation
+2025-06-14 21:33:43,515 - 15,404.74,422.64,3736.78,35877.56, jeg hedder jane med, My name is Jane with
+2025-06-14 21:33:47,176 - 25,255.58,633.12,3660.74,37451.00, mcgonigal og, mcgonigal and
+2025-06-14 21:33:48,806 - 35,112.01,606.30,1629.48,37016.07, jeg har lavet online, I have made online
+2025-06-14 21:33:50,957 - 46,83.93,630.58,2150.99,36876.24, spil i 10 år og mit, games for 10 years and mine
+2025-06-14 21:33:53,267 - 57,248.83,629.39,2309.12,36889.78, mål for det næste årti er at, goal for the next decade is to
+2025-06-14 21:33:57,155 - 68,100.41,740.52,3887.94,38495.16, gøre det lige så lidt at redde verden i, do just as little to save the world in
+2025-06-14 21:33:59,322 - 79,116.30,751.15,2166.55,38384.28, det virkelige liv som det er allerede, the real life as it is already
+2025-06-14 21:34:01,287 - 94,245.73,647.92,1965.07,37227.16, redde verden i onlinespil, save the world in online games
+2025-06-14 21:34:03,053 - 104,73.15,677.82,1765.90,36910.88, jeg har en plan for dette og det, I have a plan for this and that
+2025-06-14 21:34:06,748 - 118,230.20,657.19,3688.60,37698.00, den indebærer at overbevise flere mennesker herunder, it involves convincing more people including
+2025-06-14 21:34:08,384 - 128,88.35,607.88,1636.11,37266.47, jer alle om at bruge mere, all of you to use more
+2025-06-14 21:34:10,278 - 138,110.93,581.85,1893.93,37084.67, tid på at spille større og bedre, time playing bigger and better
+2025-06-14 21:34:11,254 - 148,107.47,495.33,975.31,35979.72, spiller, player
+2025-06-14 21:34:13,795 - 159,75.81,587.61,2541.30,36234.69, nu bruger vi milliarder timer om ugen, now we spend billions of hours a week
+2025-06-14 21:34:15,355 - 171,231.29,621.39,1558.66,35294.54, på at spille online spil, playing online games
+2025-06-14 21:34:16,634 - 181,186.43,520.82,1278.69,34496.30, nogen af jer tænker, any of you thinking
+2025-06-14 21:34:17,623 - 194,279.46,496.56,988.83,32806.10, er måske, may be
+2025-06-14 21:34:19,545 - 204,143.71,566.90,1922.00,32657.77, det er meget tid at bruge på at, it is much time to spend on
+2025-06-14 21:34:21,427 - 215,161.57,630.39,1881.79,32263.18, spille spil måske for meget, playing games perhaps too much
+2025-06-14 21:34:23,103 - 225,138.02,538.71,1675.51,31872.14, tid i betragtning af hvor, time considering where
+2025-06-14 21:34:25,332 - 235,141.86,485.74,2229.06,32035.03, mange presserende problemer vi, many pressing problems we
+2025-06-14 21:34:27,017 - 245,179.92,487.79,1685.16,31662.34, har at løse i den virkelige, have to solve in the real
+2025-06-14 21:34:28,286 - 255,182.02,566.89,1268.24,30855.24, verden men ifølge, world but according to
+2025-06-14 21:34:30,582 - 266,150.49,592.55,2294.92,30884.46, min forskning ved institute of the, my research by institute of the
+2025-06-14 21:34:31,819 - 276,157.11,595.57,1236.84,30045.26, future er det faktiske, future is the actual
+2025-06-14 21:34:33,772 - 287,246.23,541.68,1952.41,29721.14, modsatte der er tilfældet, opposite that is the case
+2025-06-14 21:34:35,439 - 297,186.70,526.82,1666.94,29333.15, milliarder timer om ugen er, billion hours per week are
+2025-06-14 21:34:36,504 - 308,160.10,540.38,1064.77,28120.32, øøhhm, uhhm
+2025-06-14 21:34:43,622 - 320,302.47,805.09,7117.29,32762.60, slet ikke nok spilletid til at løse verdens mest presserende problemer, not at all enough playing time to solve the world's most pressing problems
+2025-06-14 21:34:44,054 - 332,148.19,810.06,432.27,30734.88, øøhhm, uhhm
+2025-06-14 21:34:47,342 - 343,303.09,773.03,3287.22,31756.74, faktisk tror jeg at hvis vi vil overleve det næste, actually I think that if we want to survive the next one
+2025-06-14 21:34:49,394 - 353,168.01,828.04,2051.71,31750.37, århundrede på denne planet er vi nødt, century on this planet we have to
+2025-06-14 21:34:52,283 - 363,152.72,748.26,2888.77,32580.25, er vi nød til at øge det samlede antal timer, we have to increase the total number of hours
+2025-06-14 21:34:52,710 - 376,282.13,665.95,426.95,30333.71, øøhhm, uhhm
+2025-06-14 21:34:55,855 - 386,325.08,664.80,3144.10,31403.22, er dramatisk jeg har beregnet at vi har brug for, is dramatic I've calculated that we need
+2025-06-14 21:34:57,601 - 396,126.61,636.48,1745.76,31065.52, 21 milliarder timers, 21 billion hours
+2025-06-14 21:34:59,480 - 409,256.21,537.86,1878.70,30267.60, spil om ugen så det, games per week saw it
+2025-06-14 21:35:00,698 - 420,275.01,594.42,1217.40,29220.77, der er nok en lidt, there is probably a little
+2025-06-14 21:35:01,944 - 430,114.47,601.35,1246.28,28409.41, kontraintuitiv, counterintuitive
+2025-06-14 21:35:03,176 - 440,159.22,439.73,1231.53,27573.98, idé, idea
+2025-06-14 21:35:04,616 - 451,152.44,571.39,1439.32,26748.15, så jeg siger det igen så det, so I say it again then it
+2025-06-14 21:35:06,356 - 461,138.18,651.79,1739.87,26419.18, kan synke ind hvis, can sink in if
+2025-06-14 21:35:08,420 - 471,163.58,579.82,2064.07,26411.69, vi vil løse problemer som, we will solve problems like
+2025-06-14 21:35:10,013 - 484,165.02,488.00,1592.36,25312.32, sult fattigdom, hunger poverty
+2025-06-14 21:35:11,157 - 494,124.74,383.26,1144.41,24394.62, globale, global
+2025-06-14 21:35:13,009 - 506,151.20,466.41,1851.51,23773.83, og fedme tror jeg, and obesity I think
+2025-06-14 21:35:14,633 - 516,141.80,509.05,1623.65,23333.85, at vi skal stræbe efter at spille, that we should strive to play
+2025-06-14 21:35:16,454 - 526,140.61,592.72,1821.30,23065.89, ånlandsspil i mindst, foreign play in at least
+2025-06-14 21:35:19,135 - 540,204.88,596.12,2679.55,22849.62, 21 milliarder timer om ugen, 21 billion hours per week;
+2025-06-14 21:35:21,188 - 551,250.14,590.44,2052.77,22621.46, inden udgangen af det næste årti, by the end of the next decade
+2025-06-14 21:35:22,929 - 562,129.42,558.50,1741.69,22102.95, nej jeg mener det, no I mean it
+2025-06-14 21:35:24,218 - 572,144.63,492.63,1288.66,21317.32, alvorligt her er, seriously here is
+2025-06-14 21:35:25,646 - 582,169.89,506.44,1421.60,20684.97, hvorfor dette billede også mere, why this image also more
+2025-06-14 21:35:26,935 - 592,188.06,598.31,1289.18,19909.67, ret godt hvorfor jeg mener at, rather well why I think that
+2025-06-14 21:35:28,432 - 603,166.40,594.36,1496.21,19115.33, spil er så vigtige for, games are so important for
+2025-06-14 21:35:29,587 - 613,130.21,505.66,1154.77,18211.04, menneskehedens fremtidig, mankind's future
+2025-06-14 21:35:30,664 - 623,123.75,537.13,1076.71,17218.31, overlevelse det er et, survival it is a
+2025-06-14 21:35:34,664 - 633,128.05,624.36,3999.50,19158.82, portræt taget af fotografen ved, portrait taken by the photographer at
+2025-06-14 21:35:36,395 - 644,144.74,556.83,1731.04,18635.09, navn fil, name file
+2025-06-14 21:35:37,528 - 654,151.42,432.56,1133.22,17710.25, øøhhm, uhhm
+2025-06-14 21:35:40,294 - 664,352.86,617.05,2765.39,18427.24, daohan ønskede at fange følelsen ved at, daohan wanted to catch the feeling by
+2025-06-14 21:35:41,329 - 674,166.89,655.49,1034.58,17388.58, spille så han satte et, playing so he put a
+2025-06-14 21:35:43,790 - 685,186.75,602.73,2460.68,17577.35, kamera og for spillerne mens de, camera and for the players while they
+2025-06-14 21:35:45,007 - 695,134.47,646.96,1216.44,16739.37, spillede og dette er en klassisk, and this is a classic
+2025-06-14 21:35:45,969 - 706,140.61,546.79,962.36,15435.89, følelse ved at spille, feeling of playing
+2025-06-14 21:35:46,789 - 716,161.71,490.90,819.55,14217.86, hvis du ikke er, if you are not
+2025-06-14 21:35:47,978 - 727,160.84,539.22,1188.84,13135.11, en spiller går du, a player you go
+2025-06-14 21:35:49,753 - 737,151.54,520.92,1773.81,12851.39, måske glip af nogen af, may miss any of
+2025-06-14 21:35:50,894 - 750,331.51,540.41,1140.97,11309.05, nuancerne i dette, 
+2025-06-14 21:35:51,861 - 760,126.19,566.95,967.01,10230.06, du ser sandsynligvis en, you see probably a
+2025-06-14 21:35:52,952 - 775,294.25,606.90,1090.36,8215.58, smule af følelsen af, bit of the feeling of

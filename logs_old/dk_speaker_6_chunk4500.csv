@@ -1,0 +1,48 @@
+time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation
+2025-06-14 23:08:54,964 - 22,340.11,502.92,6147.68,37394.21, hvis jeg kan give jeg en vigtig tanke med på, If I can give an important thought to
+2025-06-14 23:08:56,962 - 40,267.20,771.29,1997.35,35642.72, vejen i dag så er det er den samlet, road today then it's the total
+2025-06-14 23:09:00,120 - 58,161.42,603.13,3158.29,35050.61, samlede mængde data vi forbruger er, total amount of data we consume is
+2025-06-14 23:09:02,557 - 76,125.62,677.27,2436.23,33760.23, større end summen af delene i stedet, greater than the sum of the parts instead
+2025-06-14 23:09:06,926 - 93,115.42,682.01,4368.87,34605.37, for at tænke på informations overload vil jeg gerne have, to think about information overload I would like
+2025-06-14 23:09:12,248 - 114,252.83,738.70,5321.91,35562.45, til at tænke over hvordan vi kan bruge information som, to think about how we can use information as
+2025-06-14 23:09:15,259 - 131,126.92,704.48,3009.93,35054.87, mønstre træder frem og vi kan se tendenser de, patterns appear and we can see trends the
+2025-06-14 23:09:18,063 - 149,124.22,705.95,2804.29,34119.42, der ellers vil være usynlig det vi, that otherwise will be invisible what we
+2025-06-14 23:09:20,453 - 170,245.33,682.45,2389.31,32173.73, ser her er et typisk dødelighedskort, see here is a typical mortality card
+2025-06-14 23:09:22,007 - 188,162.26,562.60,1554.44,29973.65, det falder jeg bruger, it drops I use
+2025-06-14 23:09:24,464 - 207,260.21,633.69,2455.92,28462.94, her er et lille eksperiment der hedder pivet, here is a little experiment called the quilt
+2025-06-14 23:09:25,555 - 227,195.80,602.55,1090.97,25455.97, det er, it is
+2025-06-14 23:09:29,738 - 248,269.63,678.43,4182.85,25307.67, jeg vælge at filtrere efter en bestemt dødsårsag for, I choose to filter according to a particular cause of death for
+2025-06-14 23:09:33,235 - 266,161.96,813.85,3496.65,25063.07, eksempel ulykker og straks ser er at der, example accidents and immediately see that there is
+2025-06-14 23:09:34,978 - 284,162.45,650.93,1742.31,23066.15, tegner sig et andet mønster det skyldes, another pattern that is due to
+2025-06-14 23:09:37,717 - 303,244.73,700.81,2739.24,21899.44, af folk i midten her er mest aktiv, of people in the middle here are most active
+2025-06-14 23:09:39,825 - 321,174.09,679.86,2107.82,20309.43, herover er det mest skrøbelige, above is the most fragile
+2025-06-14 23:09:41,998 - 339,289.75,684.56,2172.17,18761.13, vi kan træde et skridt tilbage og derefter om, we can step back and then re-enter
+2025-06-14 23:09:45,498 - 360,261.42,844.20,3499.53,17922.85, omorganiserer dataen efter dødsårsag og, reorganises the data after cause of death; and
+2025-06-14 23:09:49,208 - 379,292.55,855.70,3710.23,17724.09, at se at kredsløbssygdomme og kræft er det, to see that circulatory diseases and cancer are
+2025-06-14 23:09:52,616 - 402,299.97,833.37,3407.52,16424.49, er de sædvanlige mistænkte men ikke for alle hvis vi går, are the usual suspects but not for everyone if we leave
+2025-06-14 23:09:54,667 - 419,167.85,831.91,2050.36,14971.54, videre og filtrerer efter alder fx, further and filter by age e.g.
+2025-06-14 23:09:57,541 - 442,595.96,758.05,2873.42,13122.08, eksempel 40 år eller den ser vi at ulykker, example 40 years or we see that accidents
+2025-06-14 23:10:00,934 - 459,131.20,846.11,3393.44,13000.17, faktisk er den største årsag som folk skal bekymre sig, are actually the biggest cause that people need to worry about
+2025-06-14 23:10:03,668 - 477,173.63,942.57,2733.22,12012.64, om og hvis man går i dybden med det er det i, about and if you go into depth with it it is in
+2025-06-14 23:10:07,190 - 495,143.17,840.26,3522.00,11807.84, er det især tilfældet for mænd som man får en fornemmelse, this is especially the case for men as you get a feeling
+2025-06-14 23:10:08,695 - 513,255.15,651.01,1504.28,9598.05, af at det er at, that it is that
+2025-06-14 23:10:11,002 - 531,139.88,556.78,2307.30,8205.03, se information og data på denne, see information and data on it
+2025-06-14 23:10:13,176 - 549,150.94,646.95,2173.65,6669.35, måde er meget ligesom at svømme i en, way is much like swimming in a
+2025-06-14 23:10:15,090 - 566,150.85,491.54,1913.52,5062.06, levende informations, live information
+2025-06-14 23:10:17,446 - 584,190.62,510.35,2355.26,3723.98, en fotografi og hvis vi kan gøre det, a photograph and if we can do so
+2025-06-14 23:10:21,064 - 602,152.04,733.98,2747.06,3633.54, gøre dette for rådata hvorfor så ikke også gøre, do this for raw data why not also do
+2025-06-14 23:10:26,003 - 623,292.66,778.94,3146.62,4219.58, kan også gøre det for indhold så det vi, can also do it for content so that what we
+2025-06-14 23:10:28,695 - 641,149.37,715.49,2328.47,3193.73, har her er forsiden af alle, has here is the front of all
+2025-06-14 23:10:32,159 - 659,182.46,557.78,2209.44,2950.89, illustrated magasiner, illustrated magazines
+2025-06-14 23:10:35,894 - 677,174.16,648.92,2152.36,2976.40, der nogensinde er produceret det hele er, ever produced it all is
+2025-06-14 23:10:38,676 - 695,316.44,621.62,1102.42,2041.56, på nettet kan gå, on the web can go
+2025-06-14 23:10:44,082 - 713,172.55,695.55,2869.50,3738.52, de kan gå tilbage til deres værelse og prøve det efter min, they can go back to their room and try it after my
+2025-06-14 23:10:47,983 - 731,178.63,900.93,2816.45,3896.36, tale med piet i kan gå i dybden med, talk to the piet in can go in depth with
+2025-06-14 23:10:53,228 - 752,298.80,883.37,3613.41,4796.27, et årti vi kan gå i dybden med et bestemt år i kan, a decade we can go into depth with a certain year in can
+2025-06-14 23:10:56,552 - 769,168.41,833.60,3323.77,4615.00, springe direkte til et bestemt nummer når jeg, jump directly to a specific number when I
+2025-06-14 23:10:59,155 - 787,164.03,782.46,2555.76,3502.69, ser på dette serier de atleter der har, look at this series the athletes who have
+2025-06-14 23:11:03,570 - 805,159.97,921.67,3103.59,4186.04, været med i dette nummer jeg er fan af lægens, been in this number I am a fan of the doctor's
+2025-06-14 23:11:07,968 - 823,207.41,1044.43,3603.93,4856.21, af lans armstrong så jeg klikker på det og så får jeg, of lances Armstrong so I click on it and then I get
+2025-06-14 23:11:11,544 - 840,168.82,1086.39,3574.33,4894.28, vist alle de numre hvor lance armstrong har været en del af, shown all the numbers where lance Armstrong has been a part of
+2025-06-14 23:11:18,586 - 880,331.21,994.25,2361.13,3687.62, jeg bare vil kigge lidt på disse kunne jeg tænke at, I just want to look at these I would like to
+2025-06-14 23:11:39,042 - 899,174.04,1013.63,18997.84,20186.07, jeg måske skulle kigge på alt om cykling så jeg kan, I might need to look at everything about cycling so I can

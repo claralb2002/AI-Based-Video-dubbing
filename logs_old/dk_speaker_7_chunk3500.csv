@@ -1,0 +1,49 @@
+time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation
+2025-06-14 22:04:57,853 - 22,401.81,435.07,5850.54,36735.27, jeg voksede op med en fast kost, I grew up with a regular diet
+2025-06-14 22:05:02,085 - 37,260.30,760.44,4232.40,37852.95, er sen fiction i gymnasiet jeg er, is late fiction in high school I am
+2025-06-14 22:05:05,455 - 50,242.41,850.07,3369.49,38515.20, jeg tog bussen til skolen en timbær vej hver, I took the bus to school a timbre road each
+2025-06-14 22:05:07,436 - 63,102.05,768.94,1980.26,37796.48, dag og jeg var altid optaget, day and I was always busy
+2025-06-14 22:05:09,758 - 75,107.52,612.29,2320.98,37623.21, anses fiction bog der førte mine, considered fiction book that led mine
+2025-06-14 22:05:11,316 - 88,107.81,616.68,1558.44,36480.27, tanker til andre verdener, thoughts to other worlds
+2025-06-14 22:05:14,886 - 100,90.00,685.29,3569.80,37536.92, og tilfredsstillede min umettelige nyskærighed, and satisfied my inalienable curiosity
+2025-06-14 22:05:16,029 - 113,125.12,663.74,1142.50,35971.64, i en fortællende form den, in a narrative form
+2025-06-14 22:05:18,806 - 126,104.27,612.81,2776.79,36051.87, nyskærighed kom også til udtryk i at nå, recentness was also expressed in reaching
+2025-06-14 22:05:23,766 - 142,255.43,978.94,4959.38,37689.03, at når jeg ikke var i skole var jeg ude i skoven hvor jeg, that when I was not in school I was out in the woods where I
+2025-06-14 22:05:27,171 - 155,78.00,1148.58,3404.32,38394.40, vandrede og tog prøver af frøer og, wandered and took samples of frogs and
+2025-06-14 22:05:30,682 - 171,240.33,971.80,3510.06,38570.83, slanger og insekter og vand fra damme som jeg tog med, snakes and insects and water from ponds that I brought with me
+2025-06-14 22:05:33,040 - 186,132.32,846.11,2357.30,37843.89, hjem og kiggede på under mikroskoper, home and looked at under microscopes
+2025-06-14 22:05:34,394 - 199,262.83,703.36,1354.53,36506.45, jeg var du vel, I guess you were
+2025-06-14 22:05:36,672 - 211,146.73,784.48,2277.34,36318.28, ved en rigtig videnskab snart men det, by a real science soon but that's it.
+2025-06-14 22:05:39,635 - 229,236.29,705.96,2962.61,35562.40, handler om at forsøge at forstå verden og, is about trying to understand the world and
+2025-06-14 22:05:42,989 - 243,264.96,736.59,3353.02,36012.30, at forstå grænserne for mulighederne og en, to understand the limits of opportunities and an
+2025-06-14 22:05:45,508 - 257,248.27,676.77,2518.49,35649.69, om min kærlighed til science fiction, about my love of science fiction
+2025-06-14 22:05:47,873 - 273,151.97,683.16,2364.86,34715.16, synes faktisk at afspejle sig i verden, seems to actually reflect in the world
+2025-06-14 22:05:49,663 - 286,128.61,659.60,1790.07,33831.12, omkring mig for det der, around me for that
+2025-06-14 22:05:51,874 - 303,192.76,710.58,2209.74,32515.84, skete var i slutningen af tresserne du, was at the end of the sixties you
+2025-06-14 22:05:54,547 - 318,260.50,868.42,2672.92,32080.36, ved vi var på vej til månen ved, know we were on our way to the moon by
+2025-06-14 22:05:56,410 - 332,250.52,712.50,1863.34,31047.62, udforskede de dybe oceaner, explored the deep oceans
+2025-06-14 22:05:58,067 - 347,267.03,518.73,1656.21,29591.20, jack koster kom, jack costs came
+2025-06-14 22:05:59,540 - 360,169.44,466.27,1472.50,28380.78, ind i vores sted, into our place
+2025-06-14 22:06:01,909 - 375,155.72,629.92,2369.18,27650.05, med sine fantastiske specialprogrammer der viste, with its amazing special programs showing
+2025-06-14 22:06:05,037 - 387,151.60,740.14,3128.00,28317.21, også dyr og steder og en hvid under, also animals and places and a white under
+2025-06-14 22:06:08,173 - 400,152.31,880.21,3134.69,28780.29, en hvid underlig verden som vi aldrig før havde kunne, a white weird world that we never could have before
+2025-06-14 22:06:10,641 - 416,313.03,828.84,2467.51,27949.90, før kunne forestille os så det synes at, before could imagine so it seems to
+2025-06-14 22:06:12,542 - 429,151.30,698.12,1900.88,27182.57, stemme overens med hele science fiction, agrees with the whole science fiction
+2025-06-14 22:06:14,684 - 446,189.61,775.00,2141.69,25830.25, delen af det og jeg var kunstner jeg kunne, part of it and I was an artist I could
+2025-06-14 22:06:16,922 - 460,330.86,740.41,2237.00,25180.98, tegne jeg kunne male og, draw I could paint and
+2025-06-14 22:06:19,057 - 473,168.46,633.14,2134.84,24645.58, jeg opdagede at fordi der ikke, I discovered that because there was no
+2025-06-14 22:06:21,770 - 485,149.16,646.72,2712.78,24867.22, var videospil og denne mætning af, was video games and this saturation of
+2025-06-14 22:06:24,755 - 498,146.03,735.42,2984.45,25159.13, computeranimerede film og alle disse, computer animated films and all of these
+2025-06-14 22:06:26,785 - 511,143.53,707.99,2030.19,24506.39, billeder i medielandskabet var, images in the media landscape were
+2025-06-14 22:06:29,229 - 523,154.56,673.32,2443.84,24480.66, nød til at skabe disse billeder i mit, had to create these images in my
+2025-06-14 22:06:30,913 - 536,139.03,671.98,1683.90,23477.77, hoved det gjorde vi alle som, head we all did as
+2025-06-14 22:06:32,549 - 552,297.44,658.95,1635.02,21803.45, børn når vi skulle læse en bog og gennem, children when reading a book and through
+2025-06-14 22:06:34,007 - 564,132.36,553.66,1458.56,20775.49, forfatterens, the author
+2025-06-14 22:06:36,089 - 578,273.10,511.86,2081.67,19970.60, sætte noget på skærmen, put something on screen
+2025-06-14 22:06:38,383 - 591,128.23,585.83,2293.79,19595.60, filme skærmen i vores hoveder, film the screen in our heads
+2025-06-14 22:06:40,365 - 606,161.14,646.53,1981.48,18493.22, og så var min reaktion på dette at, and then my reaction to this was to
+2025-06-14 22:06:42,277 - 624,167.32,614.49,1911.16,16716.44, male at tegne fremmede, paint drawing strangers
+2025-06-14 22:06:43,335 - 636,130.01,463.73,1058.35,15306.21, verdener robotter, worlds robots
+2025-06-14 22:06:44,954 - 651,328.17,460.00,1618.06,13855.40, rumskibe alt det der, spaceships all that
+2025-06-14 22:06:47,342 - 664,150.43,692.73,2388.61,13555.51, jeg blev uendeligt meget smidt ud af matematik, I was infinitely thrown out of mathematics
+2025-06-14 22:06:50,575 - 676,160.31,926.02,3232.49,14316.80, matematikundervisningen fordi jeg sad og, mathematics teaching because I sat and
