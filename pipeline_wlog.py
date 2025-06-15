@@ -37,12 +37,11 @@ class Pipeline:
 
         while True:
             chunk = audio_queue.get()
-            if chunk is None:
-                transcription_queue.put(None)
-                break
-
             # Log the time when the audio chunk is received
             chunk_id, start_time, audio = chunk
+            if audio is None:
+                break
+
             #logger.debug(f"Received chunk {chunk_id} at {start_time:.4f} seconds")  # ! this logs all samples as well (if commented out it will only log the final result)
             stt_start = time.perf_counter()
             result = model.add_audio_chunk(audio)
@@ -51,7 +50,9 @@ class Pipeline:
             if result:
                 transcription_queue.put((chunk_id, start_time, stt_start, stt_end, result))
 
+        stt_start = time.perf_counter()
         final_result = model.flush()
+        stt_end = time.perf_counter()
         if final_result:
             transcription_queue.put((chunk_id, start_time, stt_start, stt_end, final_result))
 
@@ -129,7 +130,7 @@ class Pipeline:
         self.tts_proc.start()
 
     def stop(self):
-        self.audio_queue.put(None)
+        self.audio_queue.put((0,time.perf_counter(),None))
         self.stt_proc.join()
         self.trans_proc.join()
         self.tts_proc.join()
@@ -138,19 +139,19 @@ class Pipeline:
 if __name__ == "__main__":
     from threading import Thread
 
-    input_language = "en"
-    output_language = "da"
+    input_language = "da"
+    output_language = "en"
 
 
     if input_language == "da":
-        wav_path = "data/danish/dk_speaker_3.wav"
+        wav_path = "data/danish/dk_speaker_6.wav"
     if input_language == "en":
         wav_path = "data/english/speaker_3_final.wav"
 
 
     audio = preprocess_audio(wav_path)
 
-    pipeline = Pipeline(input_language=input_language, output_language=output_language, min_chunk_size=4000, device="cpu")
+    pipeline = Pipeline(input_language=input_language, output_language=output_language, min_chunk_size=5500, file_name=wav_path, device="cpu")
     pipeline.start()
 
     def print_outputs(queue):

@@ -57,7 +57,7 @@ class LiveTranscriber:
                 keep_for_next = self.speech_buffer[-self.overlap:] if self.overlap > 0 else []
                 chunk = np.array(self.speech_buffer)
 
-                print(f"length: {len(chunk)/self.sample_rate:.2f}") 
+                # print(f"length: {len(chunk)/self.sample_rate:.2f}") 
 
                 self.speech_buffer = list(keep_for_next)
                 transcript_out = self.transcribe_buffer(chunk)
@@ -104,7 +104,7 @@ class WhisperTranscriber(LiveTranscriber):
         text = " ".join(s.text.strip() for s in segments)
         if text:
             self.transcript_context = text
-            print(f"Transcribed text: {text}")
+            # print(f"Transcribed text: {text}")
         return text
 
 class DanishTranscriber(LiveTranscriber):
@@ -137,7 +137,7 @@ class DanishTranscriber(LiveTranscriber):
         else:
             self.already_wait = False
         
-        text_timestamp = self.model(chunk, return_timestamps="word")
+        text_timestamp = self.model(chunk, return_timestamps="word", max_length = 600)
         text_timestamp['text'] = text_timestamp['text'].split(' ') # Making text into list
 
         if len(text_timestamp['text']) == 1 and not self.already_wait:
