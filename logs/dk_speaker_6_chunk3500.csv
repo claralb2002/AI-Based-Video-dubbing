@@ -1,0 +1,68 @@
+time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation
+2025-06-14 22:01:11,826 - 19,409.29,579.67,5881.76,38994.18, hvis jeg kan give jer en vigtig, if I can give you an important one
+2025-06-14 22:01:14,386 - 31,226.14,784.51,2558.40,39061.29, tanke med på vejen i dag så er, thought on the road today then it is
+2025-06-14 22:01:16,052 - 44,78.51,691.33,1666.23,38055.21, det er den samlede mængde, that's the total amount
+2025-06-14 22:01:17,420 - 57,114.10,534.06,1367.17,36712.95, vi forbruger er, we consume is
+2025-06-14 22:01:19,504 - 70,232.24,557.85,2083.74,36100.89, større end summen af delene, greater than the sum of the parts
+2025-06-14 22:01:21,336 - 83,257.30,601.87,1832.25,35222.51, i stedet for at tænke på, instead of thinking about
+2025-06-14 22:01:25,799 - 96,117.71,658.63,4462.24,36982.76, informations overload vil jeg gerne have til at tænke, information overload I would like to have to think
+2025-06-14 22:01:27,525 - 108,102.74,688.89,1725.36,36211.95, over hvordan vi kan bruge, about how we can use
+2025-06-14 22:01:32,206 - 125,289.72,643.11,4681.27,37381.16, information som mønstre træder frem og vi kan se, information as patterns appear and we can see
+2025-06-14 22:01:34,396 - 137,79.76,636.84,2189.35,37101.29, tendenser der ellers vil være, trends there will otherwise be
+2025-06-14 22:01:35,271 - 151,267.54,474.72,874.65,35078.73, det, it
+2025-06-14 22:01:37,135 - 163,87.92,467.36,1864.18,34475.95, vi ser her er typisk, we see here is typical
+2025-06-14 22:01:39,389 - 177,258.42,635.19,2253.40,33842.37, hedskort opdelt efter alder, heath cards broken down by age
+2025-06-14 22:01:41,529 - 193,291.67,653.38,2139.53,32660.53, det værktøj jeg bruger her er en lille, the tool I use here is a small
+2025-06-14 22:01:43,930 - 207,249.20,752.54,2400.79,32154.98, er et lille eksperiment der hedder pivet, is a small experiment called the quilt
+2025-06-14 22:01:45,292 - 221,269.96,599.38,1361.77,30631.54, det hedder, it is called
+2025-06-14 22:01:47,807 - 234,139.28,688.43,2515.11,30473.96, og med pippet kan jeg vælge at filtrere, and with the pip I can choose to filter
+2025-06-14 22:01:49,863 - 248,258.62,788.70,2055.51,29658.36, efter en bestemt dødsårsag for, after a certain cause of death for
+2025-06-14 22:01:52,739 - 261,123.50,599.84,2874.60,29857.61, eksempel ulykker og straks, example accidents and immediate
+2025-06-14 22:01:54,889 - 273,130.97,627.50,2149.46,29509.70, ser jeg at der tegner sig et andet, I see that there is another
+2025-06-14 22:01:56,673 - 286,152.50,603.69,1784.66,28603.12, mønster det skyldes af, pattern that is due to
+2025-06-14 22:01:59,125 - 299,136.41,639.77,2451.11,28374.44, at folk i midten her er mest, that people in the middle here are most
+2025-06-14 22:02:01,376 - 314,279.89,693.67,2250.68,27534.11, aktive og herover er de mest, active and above are the most
+2025-06-14 22:02:02,706 - 327,168.90,613.25,1330.11,26191.15, vi kan træde et, we can step a
+2025-06-14 22:02:04,418 - 339,171.49,632.22,1711.00,25420.85, skridt tilbage og derefter om, step back and then about
+2025-06-14 22:02:05,882 - 353,149.35,518.24,1463.63,24001.29, dataen efter, data after
+2025-06-14 22:02:08,016 - 366,131.32,560.12,2134.61,23475.91, dødsårsag at se at, cause of death to see that
+2025-06-14 22:02:11,228 - 378,139.37,664.76,3211.25,24195.32, kredsløbssygdomme og kræft er, circulatory diseases and cancer are
+2025-06-14 22:02:13,529 - 391,142.17,658.04,2300.01,23814.87, de sædvanlige mistænkte men ikke for, the usual suspects but not for
+2025-06-14 22:02:14,876 - 407,274.90,655.14,1346.79,21852.01, alle hvis vi går videre og, all if we go ahead and
+2025-06-14 22:02:16,447 - 419,159.31,658.86,1571.05,20938.98, filtrerer efter alder fx, filters by age e.g.
+2025-06-14 22:02:18,201 - 432,137.42,670.03,1747.95,20022.58, eksempel 40 år eller derunder, example 40 years or less
+2025-06-14 22:02:21,140 - 445,151.38,680.18,2939.41,20290.64, ser vi at ulykker faktisk er den største, we see that accidents are actually the largest
+2025-06-14 22:02:23,066 - 457,146.38,635.97,1925.17,19732.54, årsag som folk skal, cause that people should
+2025-06-14 22:02:24,988 - 470,153.69,627.25,1921.27,18985.25, bekymre sig om og hvis man går i dybden, worry about and if you go into depth
+2025-06-14 22:02:27,683 - 483,144.45,709.87,2694.90,18987.16, med det er det især tilfældet for, with this is especially the case for
+2025-06-14 22:02:29,596 - 500,296.39,666.21,1913.34,17368.76, mænd som man får en fornemmelse af, men who get a sense of
+2025-06-14 22:02:31,334 - 513,130.47,599.35,1737.22,16417.88, at det er at, that it is that
+2025-06-14 22:02:33,860 - 529,277.63,596.80,2526.13,15646.85, se information og data på denne, see information and data on it
+2025-06-14 22:02:35,873 - 542,157.39,603.26,2012.49,14971.12, måde er meget ligesom at, way is much like that
+2025-06-14 22:02:37,115 - 556,157.28,575.42,1241.78,13316.61, var svømme i en levende, was swimming in a live
+2025-06-14 22:02:38,891 - 569,159.62,475.34,1775.95,12436.37, informations, information
+2025-06-14 22:02:40,537 - 581,145.62,451.67,1645.86,11582.67, fotografi og hvis vi kan, photography and if we can
+2025-06-14 22:02:42,469 - 596,175.40,571.73,1930.98,10411.88, gøre dette for rådata hvorfor, do this for raw data why
+2025-06-14 22:02:44,476 - 610,134.83,675.56,2006.92,9538.34, så ikke også gøre det for indhold, so don't also do it for content
+2025-06-14 22:02:45,815 - 623,271.41,569.97,1339.31,8181.06, så det, so it
+2025-06-14 22:02:47,600 - 636,131.65,428.00,1784.46,7304.25, vi har her er forsiden af, We have here is the front of
+2025-06-14 22:02:49,052 - 652,284.31,581.78,1444.31,5437.52, alle sports illustrated, all sports illustrated
+2025-06-14 22:02:51,201 - 665,135.98,522.14,2148.85,4886.76, magasiner der nogensinde er, magazines that ever are
+2025-06-14 22:02:52,502 - 680,157.83,600.96,1300.66,3083.76, produceret det hele er har, produced it all is has
+2025-06-14 22:02:55,244 - 695,293.59,618.23,1815.96,2728.48, det hele er på nettet kan gå, it's all online can go
+2025-06-14 22:02:59,975 - 711,281.83,819.15,3065.39,4170.29, de kan gå tilbage til deres værelse og prøve det efter, they can go back to their room and try it after
+2025-06-14 22:03:01,929 - 726,170.04,768.77,1953.44,3017.57, min tale med piet, my talk with piet
+2025-06-14 22:03:05,939 - 739,141.42,767.59,3434.94,4344.41, i kan gå i dybden med et årti vi kan gå i, you can go into depth with a decade we can go in
+2025-06-14 22:03:07,797 - 751,149.28,799.59,1857.36,3728.76, dybden med et bestemt år i kan, depth with a certain year you can
+2025-06-14 22:03:10,526 - 765,146.06,716.72,2692.76,3555.96, springe direkte til et bestemt nummer, jump directly to a specific number;
+2025-06-14 22:03:12,342 - 779,301.69,654.83,1508.89,2466.13, når jeg ser på dette ser jeg, when I look at this I see
+2025-06-14 22:03:15,556 - 792,111.73,815.25,2057.76,2985.33, serier de atleter der har været med i dette, series the athletes that have been in this
+2025-06-14 22:03:17,934 - 805,145.31,849.40,1698.85,2693.91, nummer jeg er fan af lans, number I am a fan of lances
+2025-06-14 22:03:22,923 - 821,192.39,839.80,3354.38,4386.92, armstrong så jeg klikker på det og så, Armstrong so I click on it and so
+2025-06-14 22:03:24,881 - 834,133.51,771.90,1957.70,3671.11, får jeg vist alle de numre hvor lands, I get all the numbers where country
+2025-06-14 22:03:27,146 - 847,147.15,739.16,2264.97,3255.26, armstrong har været en del af det, Armstrong has been part of it
+2025-06-14 22:03:29,273 - 861,176.06,636.44,1675.25,2488.19, hvis jeg bare, if I just
+2025-06-14 22:03:31,826 - 874,152.79,630.75,1582.95,2366.88, vil kigge lidt på disse kunne jeg, will look at these a little I could
+2025-06-14 22:03:34,831 - 886,168.90,683.84,2061.08,2914.18, tænke at jeg måske skulle kigge på, think that I might need to look at
+2025-06-14 22:03:36,699 - 899,151.16,623.54,1322.57,2097.73, at om cykling, that about cycling
+2025-06-14 22:03:39,860 - 912,151.42,609.20,1803.87,2565.73, ska tredje skridt tilbage og, shall take the third step back; and

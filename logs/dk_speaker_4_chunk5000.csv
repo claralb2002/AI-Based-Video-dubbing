@@ -1,0 +1,39 @@
+time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation
+2025-06-14 23:35:43,568 - 25,322.02,545.18,7704.83,38510.21, alle taler om lykke i disse dage, Everyone talks about happiness these days
+2025-06-14 23:35:52,852 - 50,268.04,994.24,9283.92,42603.44, jeg fik nogen til at tælle antallet af bøger med lykke i titlen der er, I got someone to count the number of books with happiness in the title that is
+2025-06-14 23:35:56,474 - 70,247.56,1023.08,3621.16,42093.86, udgivet i de sidste år og de gav op efter omkring, released in the last years and they gave up after about
+2025-06-14 23:35:59,244 - 90,111.95,815.21,2768.51,40694.71, 40 og der var mange flere der er en, 40 and there were many more there is a
+2025-06-14 23:36:02,976 - 111,159.16,757.06,3732.15,40050.11, enorm bølge af interesse for lykke blandt forskere, huge wave of interest in happiness among researchers
+2025-06-14 23:36:04,602 - 134,310.18,687.01,1625.65,36932.34, er en masse cti, is a lot of cti
+2025-06-14 23:36:08,083 - 154,112.59,732.64,3480.08,36256.06, alle ville gerne gøre folk lykkeligere men på trods af, everyone would like to make people happier but despite
+2025-06-14 23:36:10,488 - 174,110.48,874.16,2404.98,34520.89, al denne strøm af arbejde er der flere kognitive, all this flow of work there are several cognitive
+2025-06-14 23:36:14,594 - 196,282.37,893.54,4105.53,34069.50, fæller der gør det næsten umuligt at tænke klart om lykke, commons that make it almost impossible to think clearly about happiness
+2025-06-14 23:36:17,706 - 217,347.31,927.80,3112.37,32873.72, og i foredrag i dag vil hovedsageligt handle om disse, and in lectures today will mainly be about these
+2025-06-14 23:36:20,771 - 237,184.65,746.80,3064.55,31790.25, kognitive fæller dette gælder både for, cognitive commons this applies both to
+2025-06-14 23:36:24,038 - 257,746.36,816.52,3266.29,30915.63, lægfolk der tænker over deres egen lykke og for, lay people who think about their own happiness and to
+2025-06-14 23:36:26,420 - 278,200.68,844.09,2381.74,28931.03, forskere der tænker over keiser, researchers who think about the keiser
+2025-06-14 23:36:29,160 - 300,305.91,729.38,2739.83,27123.16, er vi er lige så forvirret som alle andre, we are just as confused as everyone else
+2025-06-14 23:36:32,568 - 320,149.16,877.31,3407.73,26417.09, den første af disse fæller er en modvilje mod at indrømme, the first of these comrades is a reluctance to admit
+2025-06-14 23:36:35,053 - 340,152.44,937.17,2484.43,24792.06, rømme kompleksitet det viser sig at ordet, dream complexity it turns out that the word
+2025-06-14 23:36:38,389 - 361,196.20,818.17,3335.74,23786.08, lykke ikke længere er et nyttigt ord fordi vi, happiness is no longer a useful word because we
+2025-06-14 23:36:40,583 - 381,145.29,782.15,2194.39,21863.89, bruger det om alt for mange forskellige ting jeg, use it on too many different things I
+2025-06-14 23:36:43,358 - 401,198.99,778.20,2773.21,20485.55, tror der er en bestemt betydning som vi kun, think there is a particular meaning that we only
+2025-06-14 23:36:46,239 - 421,147.59,925.91,2881.19,19276.46, som vi kunne begrænse det til men i det store og, as we could limit it to but on the whole and
+2025-06-14 23:36:48,567 - 442,260.02,975.44,2327.29,17287.48, hele er det noget vi må give op og vi, it's something we have to give up and we
+2025-06-14 23:36:50,490 - 462,142.41,676.42,1923.20,15086.23, må vil anlægge en mere kompliceret, must be more complex
+2025-06-14 23:36:51,603 - 484,302.95,546.53,1112.35,11666.60, af hvad, of what
+2025-06-14 23:36:55,226 - 506,298.36,601.77,3623.15,10756.08, den anden fælde er en forveksling mellem oplevelse og, the second trap is a confusion between experience and
+2025-06-14 23:36:58,067 - 531,176.72,832.62,2840.58,8456.49, erindring det handler grundlæggende om forskellen, memory it is basically about the difference
+2025-06-14 23:37:01,089 - 551,183.40,716.02,3021.80,7336.49, mellem at være lykkelig i sit liv og, between being happy in his life and
+2025-06-14 23:37:03,605 - 572,311.42,779.44,2515.52,5509.05, at være lykkelig over sit liv eller tilfreds med sit liv, being happy or content with your life
+2025-06-14 23:37:06,308 - 593,169.45,819.18,2702.81,3897.06, og det er to meget forskellige begreber som, and these are two very different concepts as
+2025-06-14 23:37:09,943 - 613,162.75,711.18,2540.74,3415.09, begge er samlet under begrebet, are both combined under the concept
+2025-06-14 23:37:15,448 - 633,188.97,786.14,3804.43,4780.86, den tredje fælde er fokus situationen og det er den, the third trap is the focus situation and that is the
+2025-06-14 23:37:22,119 - 658,549.67,1017.66,4740.98,6310.00, der uheldige kendsgerning at vi ikke kan tænke på nogle omstændigheder der, that unfortunate fact that we cannot think of any circumstances there
+2025-06-14 23:37:24,486 - 680,330.30,864.10,2366.62,4130.96, påvirker velvære uden at forvrænge deres betydning, affect well-being without distorting their importance
+2025-06-14 23:37:27,693 - 701,214.60,724.65,2071.48,3011.21, jeg mener der er en reel, I think there is a real
+2025-06-14 23:37:32,788 - 721,156.70,932.45,2883.95,3974.42, kognetive fælde og der er ingen måde at gøre det, cognitive trap and there's no way to do it
+2025-06-14 23:37:36,732 - 741,156.42,960.00,2664.29,3781.16, rigtigt på jeg vil gerne starte med et eksempel på en, right on I would like to start with an example of a
+2025-06-14 23:37:41,616 - 761,194.59,926.80,3418.73,4540.74, person der havde en spørgerunde efter en af mine, person who had a query round after one of mine
+2025-06-14 23:37:47,205 - 784,367.89,994.51,4014.59,5377.76, forelæsninger og fortalte en historie og det var historien om at han, lectures and told a story and that was the story of he
+2025-06-14 23:37:50,168 - 805,155.02,968.81,2845.25,3969.61, sagde han havde lyttet til symfoni, said he had listened to symphony
