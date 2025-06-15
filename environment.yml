@@ -25,6 +25,9 @@ dependencies:
   - transformers
   - jiwer
   - sentencepiece
+  - sacremoses
+  - pandas
+  - numpy
   - pip:
       - faster-whisper
       - pydub
@@ -33,3 +36,4 @@ dependencies:
       - evaluate
       - unbabel-comet
       - pyctcdecode
+      - comet
