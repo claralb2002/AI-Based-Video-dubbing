@@ -1,15 +1,15 @@
-
-<table style="width:100%;">
+<table style="width:100%; border-collapse:collapse;">
   <tr>
-    <td style="width:80%; text-align:left; vertical-align:top;">
-      <h1>Live AI Translation</h1>
-      <h2>Real-Time Multilingual Communication</h2>
+    <td style="width:80%; vertical-align:top; text-align:left; border:none;">
+      <h1 style="margin-bottom:0;">Live AI Translation</h1>
+      <h2 style="margin-top:0; font-weight:normal;">Real-Time Multilingual Communication</h2>
     </td>
-    <td style="width:20%; text-align:right; vertical-align:top;">
-      <img src="DTULogo.png" alt="Logo" style="width:100px;" />
+    <td style="width:20%; vertical-align:top; text-align:right; border:none;">
+      <img src="your-image.png" alt="DTU Logo" style="height:80px;" />
     </td>
   </tr>
 </table>
+
 
 
 ![App Screenshot](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
