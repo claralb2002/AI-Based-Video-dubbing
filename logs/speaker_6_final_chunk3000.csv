@@ -1,0 +1,39 @@
+time,chunk_id,stt_latency_ms,tt_latency_ms,tts_latency_ms,total_latency_ms,transcription,translation
+2025-06-16 18:03:12,286 - 18,550.79,980.69,11049.76,16387.64, If I can leave you with one big idea today it's that the whole, Hvis jeg kan efterlade dig med en stor idé i dag er det hele
+2025-06-16 18:03:15,814 - 33,643.02,1147.38,3527.11,16794.93, of the data in which we consume is greater than the sum of..., af de data hvor vi forbruger er større end summen af...
+2025-06-16 18:03:18,477 - 49,535.81,1041.00,2662.93,16120.30, the parts. And instead of thinking about..., delene. og i stedet for at tænke på...
+2025-06-16 18:03:21,171 - 64,532.61,992.87,2693.52,15700.21, What I'd like you to think about..., hvad jeg gerne vil have dig til at tænke over...
+2025-06-16 18:03:24,993 - 80,514.38,946.91,3821.51,16179.10, is how we can use information to that pattern., er hvordan vi kan bruge oplysninger til dette mønster.
+2025-06-16 18:03:29,998 - 95,528.43,1034.17,5004.85,18087.15, And we can see trends that would otherwise be invisible., og vi kan se tendenser der ellers ville være usynlige.
+2025-06-16 18:03:33,890 - 110,523.96,1148.67,3891.65,18881.67, So what we're looking at right here is a typical mortality chart., så hvad vi kigger på lige her er en typisk dødelighed diagram.
+2025-06-16 18:03:37,586 - 127,520.70,960.46,3695.07,19040.94, Organized by age. This tool that I'm using-, organiseret efter alder. dette værktøj som jeg bruger
+2025-06-16 18:03:44,261 - 143,625.31,1149.53,6675.46,22423.51, here is a little experiment it's called pivot and with pivot what I can do., her er en lille eksperiment det kaldes pivot og med pivot hvad jeg kan gøre.
+2025-06-16 18:03:47,697 - 158,582.85,1234.83,3434.73,22768.35, is I can choose to filter on one particular cause of this., er jeg kan vælge at filtrere på en bestemt årsag til dette.
+2025-06-16 18:03:50,935 - 173,507.48,964.86,3238.36,22917.50, Say accidents and right away I see there's a., sige ulykker og med det samme jeg ser der er en.
+2025-06-16 18:03:54,424 - 188,529.13,958.37,3488.44,23275.97, different pattern that emerges. This is because in the., anderledes mønster der opstår. dette er fordi i den.
+2025-06-16 18:03:58,362 - 203,522.17,1044.11,3937.32,24118.21, The area here people are their most active and over here there. They're., området her folk er deres mest aktive og herovre. de er.
+2025-06-16 18:04:01,461 - 221,522.80,1070.87,3099.18,23499.82, Most frail we can step back out again and then real., mest skrøbelige vi kan træde ud igen og derefter reel.
+2025-06-16 18:04:05,352 - 236,479.05,1013.77,3891.07,24326.12, We can organize the data by cause of death seeing that., vi kan organisere data ved dødsårsagen se at.
+2025-06-16 18:04:09,104 - 252,505.15,1056.32,3751.17,24745.89, Circulatory diseases and cancers are the usual suspect., kredsløbssygdomme og kræft er de sædvanlige mistænkte.
+2025-06-16 18:04:11,958 - 267,513.32,863.64,2853.23,24490.85, But not for everyone. If we go ahead., men ikke for alle. hvis vi går videre.
+2025-06-16 18:04:15,194 - 282,508.51,842.15,3235.85,24630.78, And we filter by age say 40 years., og vi filtrerer efter alder sige 40 år.
+2025-06-16 18:04:18,482 - 297,477.55,882.73,3287.22,24815.86, Or less we see that accident are actually., eller mindre ser vi at ulykken er faktisk.
+2025-06-16 18:04:22,920 - 312,557.01,1134.41,4438.28,26175.35, The greatest cause that people have to be worried about and if you drill into., den største årsag at folk skal være bekymrede for og hvis du borer ind.
+2025-06-16 18:04:25,957 - 330,519.13,1014.33,3036.19,25495.49, So that it's especially the case for Matt., så det er især tilfældet for mat.
+2025-06-16 18:04:29,347 - 345,466.41,819.09,3390.46,25793.61, You get the idea that viewing information., du får den idé at visning oplysninger.
+2025-06-16 18:04:33,969 - 362,524.08,885.04,4621.20,26925.56, Viewing data in this way is a lot like swimming., visning af data på denne måde er meget ligesom svømning.
+2025-06-16 18:04:41,027 - 381,567.51,1051.87,7057.61,30073.47, And then living information infographic. And if we can do this., og derefter levende oplysninger infographic. og hvis vi kan gøre dette.
+2025-06-16 18:04:45,776 - 396,489.23,1007.34,4749.03,31739.81, For raw data. Why not do it for content?, for rå data. hvorfor ikke gøre det for indhold?
+2025-06-16 18:04:48,763 - 413,533.94,940.87,2985.92,31266.72, Well so what we have right here is the cup., godt så hvad vi har lige her er koppen.
+2025-06-16 18:04:52,205 - 431,503.56,910.22,3442.02,30969.70, However of every single sports illustrated ever produced., dog af hver enkelt sport illustreret nogensinde produceret.
+2025-06-16 18:04:55,696 - 447,587.80,888.42,3490.48,31155.89, It's all here it's all on the web., det hele er her det hele er på nettet.
+2025-06-16 18:04:59,844 - 465,577.34,1014.98,4148.24,31592.61, I can go back to your rooms and try this after my talk., Jeg kan gå tilbage til dine værelser og prøve dette efter min snak.
+2025-06-16 18:05:03,155 - 480,11189.75,1770.18,3310.78,31809.39, You make it. You can drill into a decade. You can drill and., du gør det. du kan bore ind i et årti. du kan bore og.
+2025-06-16 18:05:07,139 - 495,559.41,1311.37,3983.30,32694.32, into a particular year. You can jump right into a specific., ind i et bestemt år. du kan hoppe lige ind i en specifik.
+2025-06-16 18:05:09,580 - 510,595.96,1083.45,2440.49,32038.71, So I'm looking at this. I see the athletes that., så jeg ser på dette. Jeg ser atleter der.
+2025-06-16 18:05:13,582 - 526,636.98,1277.71,4002.52,32725.81, Have appeared in this issue the sports. I'm a Lance Armstrong., har optrådt i dette spørgsmål sporten. Jeg er en lance armstrong.
+2025-06-16 18:05:17,407 - 541,615.56,1140.09,3824.56,33447.34, So I'll go ahead and I'll click on that which reveals., så jeg vil gå videre og jeg vil klikke på det som afslører.
+2025-06-16 18:05:21,900 - 556,604.45,1206.67,4493.08,34840.34, For me all of the issues in which Lance Armstrong has been a part of., for mig alle de spørgsmål hvor Lance Armstrong har været en del af.
+2025-06-16 18:05:25,235 - 571,556.93,1087.28,3334.48,35080.69, Now if I want to just kind of take a peek?, nu hvis jeg ønsker at bare slags tage et kig?
+2025-06-16 18:05:29,460 - 586,594.43,1144.72,4224.45,36213.97, Look at these. I might think well what about taking a look at this?, se på disse. Jeg kunne tænke godt hvad med at tage et kig på dette?
+2025-06-16 18:05:31,656 - 0,514.30,1145.42,2195.67,35720.13, All of cycling. So I can step back and., alle cykling. så jeg kan træde tilbage og.
