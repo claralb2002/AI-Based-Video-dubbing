@@ -1,14 +1,11 @@
-<table style="width:100%; border-collapse:collapse; table-layout:fixed; border-style: hidden;">
-  <tr>
-    <td style="width:90%; text-align:left; vertical-align:top; padding:0; border-style: hidden;">
-      <h1 style="margin:0;">Live AI Translation</h1>
-      <h2 style="margin:0; font-weight:normal;">Real-Time Multilingual Communication</h2>
-    </td>
-    <td style="width:20%; text-align:right; vertical-align:top; padding:0; border-style: hidden;">
-      <img src="DTULogo.png" alt="DTU Logo" style="height:80px; display:block; margin-left:auto;" />
-    </td>
-  </tr>
-</table>
+<div style="display: flex; align-items: start; justify-content: space-between; width: 100%;">
+  <div>
+    <h1 style="margin: 0;">Live AI Translation</h1>
+    <h2 style="margin: 0; font-weight: normal;">Real-Time Multilingual Communication</h2>
+  </div>
+  <img src="DTULogo.png" alt="DTU Logo" style="height: 80px;" />
+</div>
+
 
 
 ![App Screenshot](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
