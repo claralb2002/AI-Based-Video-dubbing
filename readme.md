@@ -40,14 +40,18 @@ To update env, run the following
 
 <b> Generate detailed logs:</b> Execute `pipeline_wlog.py`to process audio files and generate a CSV log for each chunk.
 
+<b> Generate results: <b> Execute `processing_results.ipynb` to generate results CSV, plots and table.
 
 
 ## Data structure
 
 `data/`: Contains all sound files and their corresponding transcriptions in  both English and Danish.
 
-`logs/`: Stores log files generated during pipeline execution, including performance metrics and processing details
+`logs/`: Contains log files generated during pipeline execution, including performance metrics and processing details
 
+`results/`: Contains all results files
+
+`images/`: Contains all plots when running all functions in `processing_results.ipynb` 
 
 
 
