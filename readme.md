@@ -1,18 +1,64 @@
-<div style="display: flex; align-items: start; justify-content: space-between; width: 100%;">
+<div style="display: flex; align-items: start;  width: 100%;">
+  <img src="readme_images/DTULogo.png" alt="DTU Logo" style="height: 80px;" />
   <div>
     <h1 style="margin: 0;">Live AI Translation</h1>
     <h2 style="margin: 0; font-weight: normal;">Real-Time Multilingual Communication</h2>
   </div>
-  <img src="DTULogo.png" alt="DTU Logo" style="height: 80px;" />
 </div>
 
 
 
 ![App Screenshot](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
-[link](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
+[link to image](https://cdn.prod.website-files.com/61707b4f874fa22b7482b07e/647e84a46f030f90ae924352_In-person%20Virtual%20Hello-p-1080.png)
+
+## Introduction
+
+This project presents a real-time, multilingual audio translation system that enables seamless speech-to-speech translation. It is especially designed for live use cases such as academic lectures, international meetings, or global events. The system converts live audio input into translated speech using a pipeline that integrates:
+
+<ul>
+  <li>Speech-to-Text (STT)</li>
+  <li>Text Translation (TT)</li>
+  <li>Text-to-Speech (TTS)</li>
+</ul>
+
+The result is a live dubbing tool capable of bridging language barriers in real time.
+
+<img src="readme_images/simple_pipeline.png" alt="Simple Pipeline" style="width: 100%;" />
 
 
-This project explores the development of a real-time audio translation system by integrating speech-to-text, text-translation, and text-to-speech components into a low-latency, high-accuracy processing pipeline.
+
+## Features
+- Live audio translation via microphone
+- Support for both English -> Danish and Danish -> English
+- Detailed logging and performance metrics
+- Streaming architecture with multiprocessing queues
+- Real-time latency tracking
+- Graph and CSV output generation
+
+
+
+## Requirements
+- Python 3.10+ 
+- Conda or Mamba
+- Microphone (for live input)
+
+
+## File Descriptions
+ <ul>
+    <li><code>pipeline.py</code> – Processes audio files</li>
+    <li><code>pipeline_demo.py</code> – Enables live microphone input</li>
+    <li><code>pipeline_wlog.py</code> – Same as <code>pipeline.py</code> but with detailed logs</li>
+    <li><code>processing_results.ipynb</code> – Generates evaluation plots, tables, and CSVs</li>
+    <li><code>environment.yml</code> – Conda environment with dependencies</li>
+    <li><code>data/</code> – Audio samples + transcriptions</li>
+    <li><code>logs/</code> – Runtime logs with latency and transcription data</li>
+    <li><code>results/</code> – Evaluation outputs: WER, CER, COMET, latency</li>
+    <li><code>images/</code> – Saved plots and diagrams</li>
+  </ul>
+
+
+
+
 
 
 ## Installation of environemnt
@@ -40,33 +86,37 @@ To update env, run the following
 
 <b> Generate detailed logs:</b> Execute `pipeline_wlog.py`to process audio files and generate a CSV log for each chunk.
 
-<b> Generate results: <b> Execute `processing_results.ipynb` to generate results CSV, plots and table.
+<b> Generate results: </b> Execute `processing_results.ipynb` to generate results CSV, plots and table.
+
+## Technologies Used
+
+  <ul>
+    <li><a href="https://github.com/openai/whisper">Whisper</a> (English STT)</li>
+    <li><a href="https://huggingface.co/CoRal-project/roest-wav2vec2-315m-v2">RØST wav2vec2</a> (Danish STT)</li>
+    <li><a href="https://huggingface.co/Helsinki-NLP/opus-mt-en-da">MarianMT</a> (Text Translation)</li>
+    <li><a href="https://huggingface.co/microsoft/speecht5_tts">SpeechT5</a> (Text-to-Speech)</li>
+    <li><a href="https://github.com/snakers4/silero-vad">Silero VAD</a> (Voice Activity Detection)</li>
+    <li><a href="https://github.com/huggingface/transformers">HuggingFace Transformers</a></li>
+    <li><a href="https://github.com/openai/whisper">Faster-Whisper</a> via CTranslate2</li>
+  </ul>
 
 
-## Data structure
-
-`data/`: Contains all sound files and their corresponding transcriptions in  both English and Danish.
-
-`logs/`: Contains log files generated during pipeline execution, including performance metrics and processing details
-
-`results/`: Contains all results files
-
-`images/`: Contains all plots when running all functions in `processing_results.ipynb` 
+## Future Work
 
 
-
-
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+ <ul>
+    <li>Support for additional languages (e.g., Spanish, German, French)</li>
+    <li>Global loading </li>
+    <li>Local cashing </li>
+    <li>More robustness (silence length, VAD threshold) </li>
+    <li>Handle larger pauses </li>
+  </ul>
 
 
 ## Authors
 
-- Clara
-- Mads
-- Julius
-- Joseph
+- Clara Louise Brodt
+- Joseph An Nguyen
+- Julius Winkel
+- Mads Helle Højgaard
 
