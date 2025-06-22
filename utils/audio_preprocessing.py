@@ -2,7 +2,7 @@ from pydub import AudioSegment
 
 def preprocess_audio(audio_file, target_rate=16000):
     """
-    Loads an audio file and preprocesses it to meet Whisper's requirements.
+    Loads an audio file and preprocesses it to meet STT module.
 
     Parameters:
         audio_file (str): Path to the audio file.
