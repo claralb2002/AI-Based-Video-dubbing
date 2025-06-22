@@ -81,7 +81,11 @@ class LiveTranscriber:
             return self.transcribe_buffer(chunk)
 
         return None
-
+"""
+Whisper implemted with Faster Whisper
+https://github.com/SYSTRAN/faster-whisper
+Licensed under MIT
+"""
 class WhisperTranscriber(LiveTranscriber):
     def __init__(self, model_type = "base.en", device = "cpu",
                  sample_rate = 16000, min_chunk_duration_ms = 4500,
@@ -106,7 +110,11 @@ class WhisperTranscriber(LiveTranscriber):
             self.transcript_context = text
             # print(f"Transcribed text: {text}")
         return text
-
+"""
+Danish ASR fine-tuned model Roest 315m-v2
+https://huggingface.co/CoRal-project/roest-wav2vec2-315m-v2
+Licensed under OpenRAIL
+"""
 class DanishTranscriber(LiveTranscriber):
     def __init__(self, device = "cpu",
                  sample_rate = 16000, min_chunk_duration_ms = 4500, 
@@ -140,28 +148,28 @@ class DanishTranscriber(LiveTranscriber):
         text_timestamp = self.model(chunk, return_timestamps="word")
         text_timestamp['text'] = text_timestamp['text'].split(' ') # Making text into list
 
-        if len(text_timestamp['text']) == 1 and not self.already_wait:
+        if len(text_timestamp['text']) == 1 and not self.already_wait: # If only one word is detected and it has not waited before, it will hold the chunk
             self.holding_chunk = chunk
-            self.wait = True
-            return 'øøhhm'
+            self.wait = True # flag to indicate that the chunk has 'waited'
+            return 'øøhhm' # pushes øhm to pipeline to avoid long pauses between adding audio chunks
 
-        if text_timestamp['chunks'][0]['timestamp'][0] <= 0.3: # Checking if word close to start boundary
-            text_timestamp['text'].pop(0)
+        if text_timestamp['chunks'][0]['timestamp'][0] <= 0.3: # Checking if word close to start boundary and removes it if necessary
+            text_timestamp['text'].pop(0) #
             text_timestamp['chunks'].pop(0)
         if len(text_timestamp['chunks'])>0:
-            if text_timestamp['chunks'][-1]['timestamp'][1] >= (len(chunk)/self.sample_rate)-0.3: # Checking if word close to end of boundary
+            if text_timestamp['chunks'][-1]['timestamp'][1] >= (len(chunk)/self.sample_rate)-0.3: # Checking if word close to end of boundary and removes it if necessary
                 text_timestamp['text'].pop(-1)
                 text_timestamp['chunks'].pop(-1)
         
-        for i,word in enumerate(text_timestamp['text']):
-            if len(word)==1 and word!='i' and word!='ø' and word!='ø':
+        for i,word in enumerate(text_timestamp['text']): 
+            if len(word)==1 and word!='i' and word!='ø' and word!='ø': # removes single character except for single character words (ERROR, ø should be changed to å)
                 text_timestamp['text'].pop(i)
 
         for i in range(len(text_timestamp['text']),0,-1): # Going backward to find max amount of duplicated words if any exist
             if len(self.prev_chunk)>=i:
                 if text_timestamp['text'][0:i] == self.prev_chunk[-i:]:
                     text_timestamp['text'] = text_timestamp['text'][i:]
-                    break
+                    break # Stops if a matching word sequence is found
 
         self.prev_chunk = text_timestamp['text']
         text = " ".join(text_timestamp['text'])
