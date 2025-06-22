@@ -108,7 +108,7 @@ To update env, run the following
     <li>Support for additional languages (e.g., Spanish, German, French)</li>
     <li>Global loading </li>
     <li>Local cashing </li>
-    <li>More robustness (silence length, VAD threshold) </li>
+    <li>More robustness (dynamic silence length and VAD threshold) </li>
     <li>Handle larger pauses </li>
   </ul>
 
@@ -119,4 +119,9 @@ To update env, run the following
 - Joseph An Nguyen
 - Julius Winkel
 - Mads Helle Højgaard
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
