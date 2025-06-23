@@ -1,7 +1,7 @@
 <div style="display: flex; align-items: start;  width: 100%;">
   <img src="readme_images/DTULogo.png" alt="DTU Logo" style="height: 80px;" />
   <div>
-    <h1 style="margin: 0;">AI-Powered Live Audi Translation</h1>
+    <h1 style="margin: 0;">AI-Powered Live Audio Translation</h1>
   </div>
 </div>
 
