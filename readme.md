@@ -1,8 +1,7 @@
 <div style="display: flex; align-items: start;  width: 100%;">
   <img src="readme_images/DTULogo.png" alt="DTU Logo" style="height: 80px;" />
   <div>
-    <h1 style="margin: 0;">Live AI Translation</h1>
-    <h2 style="margin: 0; font-weight: normal;">Real-Time Multilingual Communication</h2>
+    <h1 style="margin: 0;">AI-Powered Live Audi Translation</h1>
   </div>
 </div>
 
@@ -141,49 +140,51 @@ Follow these steps to create the dataset for evaluation:
 
 5. **Structure Dataset Folders**  
    Create folders and name files according to:
-      data/
-    ├── danish/
-    │   ├── dk_speaker_1.wav
-    │   ├── dk_speaker_1_final.txt
-    │   ├── dk_speaker_2.wav
-    │   ├── dk_speaker_2_final.txt
-    │   ├── dk_speaker_3.wav
-    │   ├── dk_speaker_3_final.txt
-    │   ├── dk_speaker_4.wav
-    │   ├── dk_speaker_4_final.txt
-    │   ├── dk_speaker_5.wav
-    │   ├── dk_speaker_5_final.txt
-    │   ├── dk_speaker_6.wav
-    │   ├── dk_speaker_6_final.txt
-    │   ├── dk_speaker_7.wav
-    │   ├── dk_speaker_7_final.txt
-    │   ├── dk_speaker_8.wav
-    │   ├── dk_speaker_8_final.txt
-    │   ├── dk_speaker_9.wav
-    │   ├── dk_speaker_9_final.txt
-    │   ├── dk_speaker_10.wav
-    │   └── dk_speaker_10_final.txt
-    ├── english/
-    │   ├── speaker_1_final.wav
-    │   ├── speaker_1_final.txt
-    │   ├── speaker_2_final.wav
-    │   ├── speaker_2_final.txt
-    │   ├── speaker_3_final.wav
-    │   ├── speaker_3_final.txt
-    │   ├── speaker_4_final.wav
-    │   ├── speaker_4_final.txt
-    │   ├── speaker_5_final.wav
-    │   ├── speaker_5_final.txt
-    │   ├── speaker_6_final.wav
-    │   ├── speaker_6_final.txt
-    │   ├── speaker_7_final.wav
-    │   ├── speaker_7_final.txt
-    │   ├── speaker_8_final.wav
-    │   ├── speaker_8_final.txt
-    │   ├── speaker_9_final.wav
-    │   ├── speaker_9_final.txt
-    │   ├── speaker_10_final.wav
-    │   └── speaker_10_final.txt
+```text
+data/
+├── danish/
+│   ├── dk_speaker_1.wav
+│   ├── dk_speaker_1_final.txt
+│   ├── dk_speaker_2.wav
+│   ├── dk_speaker_2_final.txt
+│   ├── dk_speaker_3.wav
+│   ├── dk_speaker_3_final.txt
+│   ├── dk_speaker_4.wav
+│   ├── dk_speaker_4_final.txt
+│   ├── dk_speaker_5.wav
+│   ├── dk_speaker_5_final.txt
+│   ├── dk_speaker_6.wav
+│   ├── dk_speaker_6_final.txt
+│   ├── dk_speaker_7.wav
+│   ├── dk_speaker_7_final.txt
+│   ├── dk_speaker_8.wav
+│   ├── dk_speaker_8_final.txt
+│   ├── dk_speaker_9.wav
+│   ├── dk_speaker_9_final.txt
+│   ├── dk_speaker_10.wav
+│   └── dk_speaker_10_final.txt
+├── english/
+│   ├── speaker_1_final.wav
+│   ├── speaker_1_final.txt
+│   ├── speaker_2_final.wav
+│   ├── speaker_2_final.txt
+│   ├── speaker_3_final.wav
+│   ├── speaker_3_final.txt
+│   ├── speaker_4_final.wav
+│   ├── speaker_4_final.txt
+│   ├── speaker_5_final.wav
+│   ├── speaker_5_final.txt
+│   ├── speaker_6_final.wav
+│   ├── speaker_6_final.txt
+│   ├── speaker_7_final.wav
+│   ├── speaker_7_final.txt
+│   ├── speaker_8_final.wav
+│   ├── speaker_8_final.txt
+│   ├── speaker_9_final.wav
+│   ├── speaker_9_final.txt
+│   ├── speaker_10_final.wav
+│   └── speaker_10_final.txt
+'''
 
 
 6. **Run Evaluation Script**  
@@ -195,7 +196,7 @@ Follow these steps to create the dataset for evaluation:
 ## How to use
 <b> Use your microphone for live input:</b> Execute `microphone_demo.py`to capture audio from your microphone and process it in real-time.
 
-<b>Run the pipeline on audio files:</b> Execute `pipeline.py`to process pre-recorded sound files through the full dubbing pipeline. *(data not included due to licensing; see **Dataset Preparation Guide (reproducibility)** section)*
+<b>Run the pipeline on audio files:</b> Execute `pipeline.py`to process pre-recorded sound files through the full dubbing pipeline. *(data not included due to licensing; see 'Dataset Preparation Guide (reproducibility)' section)*
 
 <b> Generate detailed logs:</b> Execute `pipeline_wlog.py`to process audio files and generate a CSV log for each chunk.
 
