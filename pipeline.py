@@ -56,7 +56,7 @@ class Pipeline:
     
     @staticmethod
     def tts_worker(translation_queue, output_queue, output_language, device="cpu"):
-        from models.text_to_speech import DanishSpeechT5, MMS_speaker, SpeechT5
+        from models.text_to_speech import DanishSpeechT5, SpeechT5
         
         if output_language == "da":
             model = DanishSpeechT5(embedding_path="utils/male_51_vest_sydsjaelland.npy", device=device)

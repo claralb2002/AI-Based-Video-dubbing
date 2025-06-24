@@ -83,7 +83,7 @@ class Pipeline:
     
     @staticmethod
     def tts_worker(translation_queue, output_queue, output_language, file_name, device="cpu"):
-        from models.text_to_speech import DanishSpeechT5, MMS_speaker, SpeechT5
+        from models.text_to_speech import DanishSpeechT5, SpeechT5
         from utils.num_to_words import numbers_to_words
         from utils.logging_setup import setup_latency_logger
 
